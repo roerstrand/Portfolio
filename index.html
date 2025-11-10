@@ -9,46 +9,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
-            --accent: #007bff;
-            --accent2: #5bc0de;
-            --bg-light: #f8f9fa;
-            --bg-dark: #121212;
+            --accent1: #007bff;
+            --accent2: #00bcd4;
             --text-light: #f8f9fa;
             --text-dark: #212529;
+            --bg-dark: #121212;
         }
 
         body {
             font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            background: var(--bg-light);
+            background: #fafafa;
             color: var(--text-dark);
-            line-height: 1.6;
+            margin: 0;
         }
 
         /* === HERO === */
         header {
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
             color: var(--text-light);
             text-align: center;
-            padding: 2.8rem 1rem 2rem;
-            box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+            padding: 3rem 1rem 2.5rem;
+            animation: gradientShift 10s ease infinite alternate;
+            background-size: 200% 200%;
+            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         header h1 {
             font-weight: 700;
-            font-size: 2.4rem;
-            margin-bottom: 0.4rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
         header p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 1rem;
         }
 
         .social-links a {
             color: white;
-            margin: 0 0.5rem;
+            margin: 0 0.6rem;
             font-size: 1.4rem;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
@@ -58,7 +68,7 @@
             opacity: 0.8;
         }
 
-        /* === SECTIONS === */
+        /* === PROJECT SECTION === */
         section {
             padding: 4rem 1rem;
         }
@@ -70,27 +80,25 @@
         #projects h2 {
             text-align: center;
             font-weight: 700;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             font-size: 2rem;
         }
 
-        /* === PROJECT CARDS === */
         .project-card {
             border: none;
             border-radius: 1rem;
             overflow: hidden;
             box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
             transition: transform 0.35s ease, box-shadow 0.35s ease;
-            height: 100%;
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            height: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-0.4rem);
-            box-shadow: 0 1.4rem 2.6rem rgba(0, 0, 0, 0.12);
+            box-shadow: 0 1.4rem 2.6rem rgba(0, 0, 0, 0.15);
         }
 
         .project-card img {
@@ -101,12 +109,11 @@
         }
 
         .card-body {
-            padding: 1.4rem 1.5rem;
-            flex-grow: 1;
+            padding: 1.5rem;
         }
 
         .card-title {
-            color: var(--accent);
+            color: var(--accent1);
             font-weight: 600;
             margin-bottom: 0.6rem;
             font-size: 1.2rem;
@@ -117,7 +124,15 @@
             font-size: 0.95rem;
         }
 
-        /* === FOOTER === */
+        /* === GRID === */
+        .row {
+            justify-content: center;
+        }
+
+        .col-md-6.col-lg-4 {
+            display: flex;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 1rem;
@@ -169,11 +184,11 @@
     <section id="projects" class="gradient">
         <h2>Projekt</h2>
         <div class="container">
-            <!-- Övre rad -->
             <div class="row">
+                <!-- Row 1 -->
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="https://roerstrand.github.io/Digitization-Project/" class="text-decoration-none">
-                        <div class="card project-card h-100">
+                    <a href="https://roerstrand.github.io/Digitization-Project/" class="text-decoration-none w-100">
+                        <div class="card project-card">
                             <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail">
                             <div class="card-body">
                                 <h5 class="card-title">Digitization Project</h5>
@@ -185,12 +200,12 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="https://roerstrand.github.io/focusflow/" class="text-decoration-none">
-                        <div class="card project-card h-100">
+                    <a href="https://roerstrand.github.io/focusflow/" class="text-decoration-none w-100">
+                        <div class="card project-card">
                             <img src="./images/focusflow.png" alt="FocusFlow app thumbnail">
                             <div class="card-body">
                                 <h5 class="card-title">FocusFlow</h5>
-                                <p class="card-text">En minimalistisk produktivitetsapp byggd i JavaScript som hjälper
+                                <p class="card-text">En minimalistisk prototyphemsida byggd i JavaScript som hjälper
                                     användaren att hålla fokus under arbetsintervaller.</p>
                             </div>
                         </div>
@@ -198,24 +213,22 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="https://roerstrand.github.io/Jumping-Game/" class="text-decoration-none">
-                        <div class="card project-card h-100">
+                    <a href="https://roerstrand.github.io/Jumping-Game/" class="text-decoration-none w-100">
+                        <div class="card project-card">
                             <img src="./images/jumping.png" alt="Jumping Game thumbnail">
                             <div class="card-body">
                                 <h5 class="card-title">Jumping Game</h5>
                                 <p class="card-text">Ett retroinspirerat webbläsarspel utvecklat i HTML, CSS och
-                                    JavaScript med enkel men engagerande gameplay.</p>
+                                    JavaScript med enkel och engagerande gameplay.</p>
                             </div>
                         </div>
                     </a>
                 </div>
-            </div>
 
-            <!-- Nedre rad, centrerad -->
-            <div class="row justify-content-center">
+                <!-- Row 2 -->
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="https://roerstrand.github.io/Calculator/" class="text-decoration-none">
-                        <div class="card project-card h-100">
+                    <a href="https://roerstrand.github.io/Calculator/" class="text-decoration-none w-100">
+                        <div class="card project-card">
                             <img src="./images/calculator.png" alt="Online Calculator thumbnail">
                             <div class="card-body">
                                 <h5 class="card-title">Online Calculator</h5>
@@ -227,13 +240,28 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="text-decoration-none">
-                        <div class="card project-card h-100">
+                    <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="text-decoration-none w-100">
+                        <div class="card project-card">
                             <img src="./images/thesis.png" alt="Högskolan i Borås logotyp">
                             <div class="card-body">
                                 <h5 class="card-title">Masteruppsats (DiVA)</h5>
                                 <p class="card-text">En vetenskaplig studie inom biblioteks- och informationsvetenskap
-                                    publicerad i DiVA, med fokus på digitala system.</p>
+                                    publicerad i DiVA, med fokus på digitala system och digital inkludering.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <a href="https://github.com/roerstrand/OPG-Robin-Strandberg-SYSM9"
+                        class="text-decoration-none w-100">
+                        <div class="card project-card">
+                            <img src="./images/wpf.png" alt="WPF App thumbnail">
+                            <div class="card-body">
+                                <h5 class="card-title">WPF App (C# / .NET)</h5>
+                                <p class="card-text">En desktopapplikation byggd i WPF och C#, med fokus på
+                                    användargränssnitt, datahantering och systemintegration. Koden finns tillgänglig på
+                                    GitHub.</p>
                             </div>
                         </div>
                     </a>
