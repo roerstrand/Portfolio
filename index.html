@@ -96,33 +96,53 @@
             font-size: 2rem;
         }
 
-        .project-card {
-            border: none;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+       .project-card {
+    border: none;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff, #f8fbff);
+    box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
 
         .project-card:hover {
-            transform: translateY(-0.4rem);
-            box-shadow: 0 1.4rem 2.6rem rgba(0, 0, 0, 0.15);
-        }
+    transform: translateY(-0.6rem) scale(1.01);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.18);
+    filter: brightness(1.02);
+}
+
+        .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.25rem;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    opacity: 0.9;
+}
 
         .project-card img {
-            width: 100%;
-            height: 12rem;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
 
-        .card-body {
-            padding: 1.5rem;
-        }
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+        ..card-body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
         .card-title {
             color: var(--accent1);
@@ -135,6 +155,27 @@
             color: #444;
             font-size: 0.95rem;
         }
+
+        .btn {
+    border-radius: 0.6rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.8rem;
+    transition: all 0.25s ease;
+}
+
+.btn-dark {
+    background-color: #111;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #000;
+    transform: translateY(-0.05rem);
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-0.05rem);
+}
 
         /* === GRID === */
         .row {
@@ -160,13 +201,21 @@
                 color: var(--text-light);
             }
 
+            
+
             section.gradient {
                 background: linear-gradient(180deg, #1b1b1b, #2a2a2a);
             }
 
-            .project-card {
-                background-color: #1f1f1f;
-            }
+          .project-card {
+        background: linear-gradient(180deg, #1f1f1f, #2a2a2a);
+        box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.6);
+    }
+
+            
+    .project-card:hover {
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.9);
+    }
 
             .card-text {
                 color: #ccc;
@@ -203,132 +252,137 @@
     <div class="container">
         <div class="row">
 
-            <!-- 1 BLAZOR APP -->
-<div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://youtube.com/shorts/dODTLfN5ly4" 
-        class="text-decoration-none w-100">
-        <div class="card project-card">
-            <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">Blazor Quiz App (C# / .NET)</h5>
-                <p class="card-text">
-                    A web application built with Blazor and C# using a layered architecture.
-                    The project demonstrates separation of concerns, component-based UI,
-                    and structured data handling within a .NET environment.
-                </p>
-
-                <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture">
-                    <p><bold>Go to Github</bold></p>
+           <div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">Blazor Quiz App (C# / .NET)</h5>
+            <p class="card-text">
+                A web application built with Blazor and C# using a layered architecture.
+                The project demonstrates separation of concerns, component-based UI,
+                and structured data handling within a .NET environment.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://youtube.com/shorts/dODTLfN5ly4" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
+                </a>
+                <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
                 </a>
             </div>
         </div>
-    </a>
+    </div>
 </div>
-            <!-- 1 WPF APP -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://youtube.com/shorts/2Ts_dHoR-nE"
-                    class="text-decoration-none w-100">
-                    <div class="card project-card">
-                        <img src="./images/wpf.png" alt="WPF App thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">WPF App (C# / .NET)</h5>
-                            <p class="card-text">
-                                A desktop application developed with WPF and C#, focusing on user interface design,
-                                data management, and system integration.
-                            </p>
 
-                              <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture">
-                    <p><bold>Go to Github</bold></p>
+<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/wpf.png" alt="WPF App thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">WPF App (C# / .NET)</h5>
+            <p class="card-text">
+                A desktop application developed with WPF and C#, focusing on user interface design,
+                data management, and system integration.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://youtube.com/shorts/2Ts_dHoR-nE" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
                 </a>
-                        </div>
-                    </div>
+                <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
                 </a>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- 2 DIGITIZATION PROJECT -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://roerstrand.github.io/Digitization-Project/" class="text-decoration-none w-100">
-                    <div class="card project-card">
-                        <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">Digitization Project</h5>
-                            <p class="card-text">
-                                A public, responsive gallery presenting digitized historical material with a clear
-                                structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
-                                The project includes dark mode support and a lightweight slideshow optimized for
-                                accessibility and cross-device browsing.
-                            </p>
-
-                            <a href="https://github.com/roerstrand/Digitization-Project">
-                    <p><bold>Go to Github</bold></p>
+<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">Digitization Project</h5>
+            <p class="card-text">
+                A public, responsive gallery presenting digitized historical material with a clear
+                structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
+                The project includes dark mode support and a lightweight slideshow optimized for
+                accessibility and cross-device browsing.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://roerstrand.github.io/Digitization-Project/" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
                 </a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- 5 JUMPING GAME -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://roerstrand.github.io/Jumping-Game/" class="text-decoration-none w-100">
-                    <div class="card project-card">
-                        <img src="./images/jumping.png" alt="Jumping Game thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">Jumping Game</h5>
-                            <p class="card-text">
-                                A simple side-scrolling game inspired by the Chrome T-Rex game. Implements a game
-                                loop, obstacle timing, and collision detection with smooth CSS animations,
-                                demonstrating state handling and event listeners in vanilla JavaScript.
-                            </p>
-
-                            <a href="https://github.com/roerstrand/Jumping-Game">
-                    <p><bold>Go to Github</bold></p>
-                </a>
-                        </div>
-                    </div>
+                <a href="https://github.com/roerstrand/Digitization-Project" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
                 </a>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- 4 CALCULATOR -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://roerstrand.github.io/Calculator/" class="text-decoration-none w-100">
-                    <div class="card project-card">
-                        <img src="./images/calculator.png" alt="Online Calculator thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">Online Calculator</h5>
-                            <p class="card-text">
-                                A browser-based calculator supporting keyboard input, decimals, clear/backspace,
-                                and operation chaining. Built with a focus on predictable behavior and readable,
-                                maintainable code using HTML, CSS and vanilla JavaScript.
-                            </p>
-
-                            <a href="https://github.com/roerstrand/Calculator">
-                    <p><bold>Go to Github</bold></p>
+<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/jumping.png" alt="Jumping Game thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">Jumping Game</h5>
+            <p class="card-text">
+                A simple side-scrolling game inspired by the Chrome T-Rex game. Implements a game
+                loop, obstacle timing, and collision detection with smooth CSS animations,
+                demonstrating state handling and event listeners in vanilla JavaScript.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://roerstrand.github.io/Jumping-Game/" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
                 </a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- 3 FOCUSFLOW -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://roerstrand.github.io/focusflow/" class="text-decoration-none w-100">
-                    <div class="card project-card">
-                        <img src="./images/focusflow.png" alt="FocusFlow app thumbnail">
-                        <div class="card-body">
-                            <h5 class="card-title">FocusFlow</h5>
-                            <p class="card-text">
-                                A clean, responsive prototype designed to help users timebox tasks and stay focused.
-                                The project emphasizes information architecture and semantic HTML, with a UI built
-                                using HTML and CSS. Focus on simple interactions, readable typography, and fast load times.
-                            </p>
-
-                            <a href="https://github.com/roerstrand/focusflow">
-                    <p><bold>Go to Github</bold></p>
-                </a>
-                        </div>
-                    </div>
+                <a href="https://github.com/roerstrand/Jumping-Game" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
                 </a>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/calculator.png" alt="Online Calculator thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">Online Calculator</h5>
+            <p class="card-text">
+                A browser-based calculator supporting keyboard input, decimals, clear/backspace,
+                and operation chaining. Built with a focus on predictable behavior and readable,
+                maintainable code using HTML, CSS and vanilla JavaScript.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://roerstrand.github.io/Calculator/" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
+                </a>
+                <a href="https://github.com/roerstrand/Calculator" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card project-card w-100">
+        <img src="./images/focusflow.png" alt="FocusFlow app thumbnail">
+        <div class="card-body">
+            <h5 class="card-title">FocusFlow</h5>
+            <p class="card-text">
+                A clean, responsive prototype designed to help users timebox tasks and stay focused.
+                The project emphasizes information architecture and semantic HTML, with a UI built
+                using HTML and CSS. Focus on simple interactions, readable typography, and fast load times.
+            </p>
+            <div class="mt-3 d-flex justify-content-between">
+                <a href="https://roerstrand.github.io/focusflow/" class="btn btn-outline-primary btn-sm" target="_blank">
+                    Demo
+                </a>
+                <a href="https://github.com/roerstrand/focusflow" class="btn btn-dark btn-sm" target="_blank">
+                    <i class="fab fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- 6 MASTER THESIS -->
             <div class="col-md-6 col-lg-4 mb-4">
