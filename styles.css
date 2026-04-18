@@ -1,15 +1,20 @@
 
-        :root {
-            --accent1: #007bff;
-            --accent2: #00bcd4;
-            --text-light: #f8f9fa;
-            --text-dark: #212529;
-            --bg-dark: #121212;
-        }
+      :root {
+    --accent1: #b2a3b5;
+    --accent2: #91818a;
+    --text-light: #faf8d4;
+    --text-dark: #91818a;
+    --bg-dark: #1e1b1f;
+
+    /* NYTT */
+    --bg-main: #faf8d4;
+    --bg-soft: #ebdccb;
+    --border-soft: #c3baaa;
+}
 
         body {
             font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-            background: #fafafa;
+     background: var(--bg-main);
             color: var(--text-dark);
             margin: 0;
         }
@@ -77,7 +82,7 @@
         }
 
         section.gradient {
-            background: linear-gradient(180deg, #ffffff, #f0f6ff);
+           background: linear-gradient(180deg, var(--bg-main), var(--bg-soft));
         }
 
         #projects h2 {
@@ -88,7 +93,7 @@
         }
 
        .project-card {
-    border: none;
+  
     border-radius: 1.2rem;
     overflow: hidden;
     background: linear-gradient(180deg, #ffffff, #f8fbff);
@@ -98,10 +103,12 @@
     flex-direction: column;
     height: 100%;
     position: relative;
+               border: 0.05rem solid var(--border-soft);
+backdrop-filter: blur(0.4rem);
 }
 
         .project-card:hover {
-    transform: translateY(-0.6rem) scale(1.01);
+    transform: translateY(-0.8rem) scale(1.015);
     box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.18);
     filter: brightness(1.02);
 }
@@ -115,6 +122,19 @@
     width: 100%;
     background: linear-gradient(90deg, var(--accent1), var(--accent2));
     opacity: 0.9;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.2rem;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0)
+    );
+    pointer-events: none;
 }
 
 
@@ -165,7 +185,7 @@
 }
 
 .btn-dark {
-    background-color: #111;
+     background-color: #91818a;
     border: none;
 }
 
@@ -214,9 +234,6 @@
     }
 
             
-    .project-card:hover {
-        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.9);
-    }
 
             .card-text {
                 color: #ccc;
