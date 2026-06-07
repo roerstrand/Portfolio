@@ -35,18 +35,6 @@
     margin-bottom: 0.8rem;
 }
 
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-}
-
-.project-gallery img {
-    width: 100%;
-    height: 8rem;
-    object-fit: cover;
-    display: block;
-}
 
 .intro {
     max-width: 42rem;
