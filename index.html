@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,12 +13,14 @@
 <body>
     <header>
     <!-- HERO -->
+    <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo">
     <h1>Robin Erik Strandberg</h1>
-    <p class="tagline">IT Systems & Application Management | Digitalization | AI & Automation | API Integration | .NET, SQL, JavaScript, Python</p>
+    <p class="tagline">IT Systems &amp; Application Management | Digitalization | AI &amp; Automation | API Integration | .NET, SQL, JavaScript, Python</p>
 
     <p class="intro">
-        I develop structured and scalable digital solutions using C#/.NET, SQL, JavaScript and modern web technologies, 
-        with a focus on automation, AI integration and efficient information systems.
+        My work sits at the intersection of software development and information management —
+        from full-stack applications and AI integrations to published research on digital accessibility.
+        I build systems that are structured, maintainable, and grounded in real user needs.
     </p>
 
     <div class="social-links">
@@ -34,37 +36,37 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-6 col-lg-4 mb-4">
+            <!-- FEATURED -->
+            <div class="w-100"></div>
+            <div class="col-md-8 mb-4">
     <a href="https://martial-store-fullstack.vercel.app" class="card-link-wrapper" target="_blank">
-        <div class="card project-card w-100">
-            <div class="project-gallery">
-
-    <img src="./images/martial-store-admin.png"
-         alt="Martial Store admin dashboard">
-</div>
+        <div class="card project-card project-card--featured w-100">
+            <span class="badge-featured">Featured Project</span>
+            <img src="./images/martial-store-admin.png"
+                 alt="Martial Store admin dashboard"
+                 class="featured-img">
             <div class="card-body">
                 <h5 class="card-title">Martial Store – Full-Stack E-Commerce Platform</h5>
                 <p class="card-text">
                     A full-stack e-commerce platform built with React, Express and MongoDB Atlas.
                     Features product management, user authentication, customer accounts,
-                    administrative tools and a responsive user interface. The application
-                    is deployed online with a cloud-hosted backend and database.
+                    and an admin dashboard. Deployed and live with a cloud-hosted backend and database.
                 </p>
-
+                <span class="project-year">2026</span>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
-
-                    <a href="https://github.com/roerstrand/REPO-NAME"
+                    <a href="https://github.com/roerstrand/martial-store-fullstack-dev"
                        class="btn btn-dark btn-sm"
                        target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
-
+                    <span class="live-badge"><i class="fas fa-circle"></i> Live</span>
                 </div>
             </div>
         </div>
     </a>
 </div>
 
+            <div class="w-100"></div>
             <div class="col-md-6 col-lg-4 mb-4">
     <a href="https://youtube.com/shorts/HhwuGdsO7Lg" class="card-link-wrapper" target="_blank">
         <div class="card project-card w-100">
@@ -74,16 +76,15 @@
                 <p class="card-text">
                     A real-time multiplayer word game built with ASP.NET Core, Blazor and SignalR.
                     Turn-based gameplay with category constraints, dynamic scoring, and session-based matchmaking.
-                    Includes LAN support and a structured layered architecture.
+                    Supports LAN play and uses a structured layered architecture.
                 </p>
+                <span class="project-year">2026</span>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
-
                     <a href="https://github.com/roerstrand/LexClash"
                        class="btn btn-dark btn-sm"
                        target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
-
                 </div>
             </div>
         </div>
@@ -97,18 +98,15 @@
             <div class="card-body">
                 <h5 class="card-title">Blazor Quiz App (C# / .NET)</h5>
                 <p class="card-text">
-                    A web application built with Blazor and C# using a layered architecture.
-                    The project demonstrates separation of concerns, component-based UI,
-                    and structured data handling within a .NET environment.
+                    A web-based quiz application built with Blazor and C#. The architecture cleanly
+                    separates data, logic, and UI — a pattern that scales well to larger .NET projects.
+                    Built as a demonstration of component-driven development in a .NET environment.
                 </p>
+                <span class="project-year">2026</span>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
-
-                 
                     <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture"
                        class="btn btn-dark btn-sm"
-                       target="_blank"
-                       >
-                        
+                       target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
                 </div>
@@ -122,18 +120,17 @@
         <div class="card project-card w-100">
             <img src="./images/wpf.png" alt="WPF App thumbnail">
             <div class="card-body">
-                <h5 class="card-title">WPF App (C# / .NET)</h5>
+                <h5 class="card-title">WPF CRUD App (C# / .NET)</h5>
                 <p class="card-text">
-                    A desktop application developed with WPF and C#, focusing on user interface design,
-                    data management, and system integration.
+                    A desktop application built with WPF and C# for managing structured data.
+                    Covers the full CRUD cycle with a responsive UI, data binding, and a clean
+                    separation between the interface and the data layer.
                 </p>
+                <span class="project-year">2025</span>
               <div class="mt-3 d-flex justify-content-between align-items-center">
-             
                     <a href="https://github.com/roerstrand/.NET-WPF-CRUD"
                        class="btn btn-dark btn-sm"
-                       target="_blank"
-            >
-                        
+                       target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
                 </div>
@@ -151,17 +148,14 @@
                 <p class="card-text">
                     A public, responsive gallery presenting digitized historical material with a clear
                     structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
-                    The project includes dark mode support and a lightweight slideshow optimized for
+                    Includes dark mode support and a lightweight slideshow optimized for
                     accessibility and cross-device browsing.
                 </p>
+                <span class="project-year">2023</span>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
-              
                     <a href="https://github.com/roerstrand/Digitization-Project"
                        class="btn btn-dark btn-sm"
-                       target="_blank"
-                      >
-
-                        
+                       target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
                 </div>
@@ -177,17 +171,14 @@
             <div class="card-body">
                 <h5 class="card-title">Jumping Game</h5>
                 <p class="card-text">
-                    A simple side-scrolling game inspired by the Chrome T-Rex game. Implements a game
+                    A side-scrolling browser game inspired by the Chrome T-Rex game. Implements a game
                     loop, obstacle timing, and collision detection with smooth CSS animations,
                     demonstrating state handling and event listeners in vanilla JavaScript.
                 </p>
                 <div class="mt-3 d-flex justify-content-between align-items-center">
-               
                     <a href="https://github.com/roerstrand/Jumping-Game"
                        class="btn btn-dark btn-sm"
-                       target="_blank"
-                     >
-                       
+                       target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
                 </div>
@@ -208,12 +199,9 @@
                     maintainable code using HTML, CSS and vanilla JavaScript.
                 </p>
            <div class="mt-3 d-flex justify-content-between align-items-center">
-               
                     <a href="https://github.com/roerstrand/Calculator"
                        class="btn btn-dark btn-sm"
-                       target="_blank"
-                       >
-                       
+                       target="_blank">
                         <i class="fab fa-github"></i> Code
                     </a>
                 </div>
@@ -222,29 +210,45 @@
     </a>
 </div>
 
-            <!-- 6 MASTER THESIS -->
+            <!-- MASTER THESIS -->
             <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="text-decoration-none w-100">
+                <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="text-decoration-none w-100" target="_blank">
                     <div class="card project-card">
                         <img src="./images/thesis.png" alt="Högskolan i Borås logotyp">
                         <div class="card-body">
-                            <h5 class="card-title">Research on Digital Inclusion in Public Libraries</h5>
+                            <span class="badge-research">Published Research</span>
+                            <h5 class="card-title">Digital Inclusion in Public Libraries</h5>
                             <p class="card-text">
                                 Digitization Through the Eyes of Immigrants Learning a New Language: A user-centered
                                 research project examining digital accessibility in public libraries with a focus
-                                on inclusion, usability, and access to information.
+                                on inclusion, usability, and access to information. Published at University of Borås.
                             </p>
-                            <div class="mt-3 d-flex justify-content-start">
-
-</div>
-
-                    
+                            <span class="project-year">2024</span>
+                            <div class="mt-3">
+                                <span class="btn btn-dark btn-sm">
+                                    <i class="fas fa-external-link-alt"></i> Read the thesis
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </a>
             </div>
 
         </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <h2>Get in touch</h2>
+    <p class="contact-sub">Have a project, a question, or just want to connect?</p>
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn btn-contact" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:robinerikstrandberg@outlook.com" class="btn btn-contact">
+            <i class="fas fa-envelope"></i> Email
+        </a>
     </div>
 </section>
 

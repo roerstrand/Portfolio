@@ -43,6 +43,16 @@
     line-height: 1.5;
 }
 
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.6);
+    margin: 0 auto 1rem;
+    display: block;
+}
+
         @keyframes gradientShift {
             0% {
                 background-position: 0% 50%;
@@ -215,6 +225,116 @@ backdrop-filter: blur(0.4rem);
             font-size: 0.9rem;
             background: linear-gradient(180deg, #ffffff, #e9f2ff);
         }
+
+        .availability {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+    letter-spacing: 0.03em;
+}
+
+.project-year {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--accent2);
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.badge-research {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.4rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+        /* === FEATURED CARD === */
+.project-card--featured {
+    border: 0.12rem solid var(--accent1);
+}
+
+.project-card--featured .featured-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.badge-featured {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.7rem;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.4rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.live-badge {
+    font-size: 0.75rem;
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.live-badge i {
+    font-size: 0.5rem;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+}
+
+        /* === CONTACT SECTION === */
+.contact-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: var(--bg-soft);
+}
+
+.contact-section h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.contact-sub {
+    color: var(--text-dark);
+    opacity: 0.75;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact:hover {
+    color: white;
+    transform: translateY(-0.15rem);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.15);
+}
 
         /* === DARK MODE === */
         @media (prefers-color-scheme: dark) {
