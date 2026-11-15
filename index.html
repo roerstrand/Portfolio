@@ -5,272 +5,278 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Robin Erik Strandberg – systems developer in digitalization and information management. Live projects, architecture and published research." data-i18n-attr="content:meta.description" />
     <link rel="icon" href="data:," />
-    <title>Robin Erik Strandberg – Portfolio</title>
+    <title data-i18n="meta.title">Robin Erik Strandberg – Portfolio</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./js/logic.js" defer></script>
+    <script src="./js/i18n.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
 <body>
     <header class="hero" data-hero>
         <div class="hero__light" aria-hidden="true"></div>
-        <div class="hero__stage">
-            <div class="portrait">
-                <span class="portrait__shadow" aria-hidden="true"></span>
-                <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo" width="232" height="242">
+
+        <div class="hero__bar">
+            <div class="lang-toggle" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.group" data-lang-toggle hidden>
+                <button type="button" lang="en" data-lang="en" aria-pressed="true">
+                    <svg class="flag" viewBox="0 0 60 30" aria-hidden="true" focusable="false">
+                        <clipPath id="flag-uk-s"><path d="M0,0 v30 h60 v-30 z" /></clipPath>
+                        <clipPath id="flag-uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" /></clipPath>
+                        <g clip-path="url(#flag-uk-s)">
+                            <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#ffffff" stroke-width="6" />
+                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#flag-uk-t)" stroke="#c8102e" stroke-width="4" />
+                            <path d="M30,0 v30 M0,15 h60" stroke="#ffffff" stroke-width="10" />
+                            <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6" />
+                        </g>
+                    </svg>
+                    <span>English</span>
+                </button>
+                <button type="button" lang="sv" data-lang="sv" aria-pressed="false">
+                    <svg class="flag" viewBox="0 0 16 10" aria-hidden="true" focusable="false">
+                        <rect width="16" height="10" fill="#006aa7" />
+                        <rect x="5" width="2" height="10" fill="#fecc00" />
+                        <rect y="4" width="16" height="2" fill="#fecc00" />
+                    </svg>
+                    <span>Svenska</span>
+                </button>
             </div>
-            <div class="hero__panel glass glass--hero">
-                <span class="hero__glare" aria-hidden="true"></span>
-                <h1>Robin Erik Strandberg</h1>
-                <p class="tagline">
-                    <span class="tagline__group"><span class="tagline__item">IT Systems &amp; Application Management</span><span class="tagline__pipe"> | </span><span class="tagline__item">Digitalization</span></span>
-                    <span class="tagline__sep" aria-hidden="true">|</span>
-                    <span class="tagline__group">AI &amp; Automation | API Integration</span>
-                    <span class="tagline__sep" aria-hidden="true">|</span>
-                    <span class="tagline__group">.NET, SQL, JavaScript, Python</span>
-                </p>
+        </div>
 
-                <p class="intro">
-                    My work sits at the intersection of software development and information management —
-                    from full-stack applications and AI integrations to published research on digital accessibility.
-                    I build systems that are structured, maintainable, and grounded in real user needs.
-                </p>
-
-                <nav class="social-links" aria-label="Profiles and contact">
-                    <a href="https://github.com/roerstrand" class="btn-glass btn-glass--hero" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
+        <div class="hero__grid">
+            <div class="hero__intro glass glass--hero">
+                <div class="hero__id">
+                    <div class="portrait">
+                        <span class="portrait__shadow" aria-hidden="true"></span>
+                        <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo" width="232" height="242">
+                    </div>
+                    <div>
+                        <h1>Robin Erik Strandberg</h1>
+                        <p class="hero__role" data-i18n="hero.role">Systems Developer · Digitalization &amp; Information Management</p>
+                    </div>
+                </div>
+                <p class="hero__lead" data-i18n="hero.lead">I build software that makes complex information easier to use.</p>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn-primary" data-explore>
+                        <span data-i18n="hero.explore">Explore projects</span>
+                        <i class="fas fa-arrow-down" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn-glass btn-glass--hero" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
-                    </a>
-                    <a href="mailto:robinerikstrandberg@outlook.com" class="btn-glass btn-glass--hero">
-                        <i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span>
-                    </a>
+                    <a href="#about" class="hero__more" data-i18n="hero.about">About me</a>
+                </div>
+                <nav class="hero__links" aria-label="Profiles and contact" data-i18n-attr="aria-label:hero.linksLabel">
+                    <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a>
+                    <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+                    <a href="mailto:robinerikstrandberg@outlook.com"><i class="fas fa-envelope" aria-hidden="true"></i><span data-i18n="common.email">Email</span></a>
                 </nav>
             </div>
-            <a href="#projects" class="explore-link" data-explore>
-                <span>Explore projects</span>
-                <i class="fas fa-arrow-down" aria-hidden="true"></i>
-            </a>
+
+            <section class="showcase" aria-labelledby="showcase-title" data-showcase>
+                <div class="showcase__plate" aria-hidden="true"></div>
+                <div class="showcase__panel glass glass--smoke">
+                    <div class="showcase__head">
+                        <p class="showcase__eyebrow">
+                            <span data-i18n="showcase.eyebrow">Featured project</span>
+                            <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+                        </p>
+                        <h2 id="showcase-title" class="showcase__title">Martial Store</h2>
+                        <p class="showcase__sub" data-i18n="showcase.sub">Full-stack e-commerce · React, Express, MongoDB Atlas</p>
+                    </div>
+                    <div class="viewer" data-viewer>
+                        <div class="viewer__frame" data-viewer-frame>
+                            <img class="viewer__img" src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" data-i18n-attr="alt:alt.martialAdmin" width="1687" height="1831" data-viewer-img data-hero-media>
+                            <span class="viewer__glare" aria-hidden="true"></span>
+                        </div>
+                        <div class="viewer__bar">
+                            <div class="viewer__controls" role="group" aria-label="Explore the admin view" data-i18n-attr="aria-label:viewer.group">
+                                <button type="button" class="seg" aria-pressed="true" data-view="sales" data-scale="1.18" data-top="0.18" data-glare="0" data-caption="cap.sales" data-i18n="view.sales">Sales overview</button>
+                                <button type="button" class="seg" aria-pressed="false" data-view="products" data-scale="1" data-top="0.46" data-glare="1" data-caption="cap.products" data-i18n="view.products">Product management</button>
+                            </div>
+                            <a href="#project/martial-store" class="btn-glass btn-glass--view" data-open-project="martial-store" data-from-hero>
+                                <span data-i18n="cta.view">View project</span><span class="sr-only">: Martial Store</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <p class="viewer__caption" aria-live="polite" data-viewer-caption data-i18n="cap.sales">Units sold per product, total units and estimated revenue at a glance.</p>
+                    </div>
+                </div>
+                <div class="showcase__chip glass glass--smoke" aria-hidden="true">
+                    <i class="fas fa-shield-halved"></i>
+                    <span data-i18n="showcase.chip">Admin-only · JWT in HttpOnly cookie</span>
+                </div>
+            </section>
         </div>
     </header>
 
     <main>
         <section id="projects" class="projects" aria-labelledby="projects-title">
-            <h2 id="projects-title" tabindex="-1">Projects</h2>
+            <h2 id="projects-title" tabindex="-1" data-i18n="projects.title">Projects</h2>
 
-            <div class="filter-bar" role="group" aria-label="Filter projects" data-filter-bar hidden>
-                <button type="button" class="filter-bar__btn" data-filter="all" aria-pressed="true">All</button>
-                <button type="button" class="filter-bar__btn" data-filter="software" aria-pressed="false">Software</button>
-                <button type="button" class="filter-bar__btn" data-filter="research" aria-pressed="false">Digitization &amp; Research</button>
+            <div class="filter-bar" role="group" aria-label="Filter projects" data-i18n-attr="aria-label:filter.group" data-filter-bar hidden>
+                <button type="button" class="filter-bar__btn" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+                <button type="button" class="filter-bar__btn" data-filter="software" aria-pressed="false" data-i18n="filter.software">Software</button>
+                <button type="button" class="filter-bar__btn" data-filter="research" aria-pressed="false" data-i18n="filter.research">Digitization &amp; Research</button>
             </div>
             <p class="sr-only" role="status" data-filter-status></p>
 
             <div class="projects-grid" data-grid data-active-filter="all">
                 <div class="projects-grid__light" aria-hidden="true"></div>
 
-                <article class="project-card glass glass--smoke project-card--featured" data-category="software"
-                    data-primary-label="Open live site"
-                    data-gallery="./images/martial-store-admin.png|Admin dashboard with sales chart and product table;./images/martial-store.png|Storefront with hero and popular gear;./images/martial-store-products.png|Product page with reviews"
-                    data-zoomable>
+                <article class="project-card glass glass--smoke project-card--featured" data-category="software" data-slug="martial-store">
                     <div class="card-media card-media--martial">
-                        <img src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" width="1687" height="1831">
-                        <span class="card-label card-label--on-media">Featured Project</span>
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Martial Store</span>
-                        </button>
+                        <img src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" data-i18n-attr="alt:alt.martialAdmin" width="1687" height="1831" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="https://martial-store-fullstack.vercel.app" class="card-primary" target="_blank" rel="noopener noreferrer">Martial Store – Full-Stack E-Commerce Platform</a>
-                        </h3>
-                        <p class="card-text">
-                            A full-stack e-commerce platform built with React, Express and MongoDB Atlas.
-                            Features product management, user authentication, customer accounts,
-                            and an admin dashboard. Deployed and live with a cloud-hosted backend and database.
-                        </p>
+                        <h3 class="card-title" data-i18n="p.martial.title">Martial Store – Full-Stack E-Commerce Platform</h3>
+                        <p class="card-text" data-i18n="p.martial.one">A live web shop with storefront, customer accounts and an admin dashboard for products and sales.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                                 <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
                             </div>
-                            <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Martial Store</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Martial Store</span></a>
+                                <a href="#project/martial-store" class="btn-glass card-primary" data-open-project="martial-store"><span data-i18n="cta.view">View project</span><span class="sr-only">: Martial Store</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--lead" data-category="software"
-                    data-primary-label="View code on GitHub" data-zoomable>
+                <article class="project-card glass glass--smoke project-card--lead" data-category="software" data-slug="enterprise-it-platform">
                     <div class="card-media card-media--enterprise">
-                        <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform dashboard" width="2487" height="1389">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Enterprise IT Operations Platform</span>
-                        </button>
+                        <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform dashboard" data-i18n-attr="alt:alt.enterprise" width="2487" height="1389" loading="lazy">
+                        <span class="card-label card-label--on-media" data-i18n="label.inProgress">In progress</span>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Enterprise IT Operations Platform</h3>
-                        <p class="card-text">
-                            An in-progress IT operations platform built around a CMDB.
-                            It combines an Angular client with Python/FastAPI gRPC services
-                            and a C#/.NET Change Service. Features include JWT-based
-                            role authorization, incident management, audit logging, and
-                            PostgreSQL, Redis, RabbitMQ, Prometheus, Grafana and Jaeger.
-                        </p>
+                        <p class="card-text" data-i18n="p.enterprise.one">An IT operations platform where gRPC services in Python and C# share a CMDB, incidents and an audit log.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/enterprise-it-platform" class="btn-glass card-primary" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Enterprise IT Operations Platform</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/enterprise-it-platform" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Enterprise IT Operations Platform</span></a>
+                                <a href="#project/enterprise-it-platform" class="btn-glass card-primary" data-open-project="enterprise-it-platform"><span data-i18n="cta.view">View project</span><span class="sr-only">: Enterprise IT Operations Platform</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev" data-category="software"
-                    data-primary-label="Watch demo video">
+                <article class="project-card glass glass--smoke project-card--dev" data-category="software" data-slug="lexclash">
                     <div class="card-media card-media--lexclash">
-                        <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail" width="1133" height="1875" loading="lazy">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> LexClash</span>
-                        </button>
+                        <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail" data-i18n-attr="alt:alt.lexclash" width="1133" height="1875" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="https://youtube.com/shorts/R_o0vKZCoqU" class="card-primary" target="_blank" rel="noopener noreferrer">LexClash – Multiplayer Word Game (.NET)</a>
-                        </h3>
-                        <p class="card-text">
-                            A real-time multiplayer word game built with ASP.NET Core, Blazor and SignalR.
-                            Turn-based gameplay with category constraints, dynamic scoring, and session-based matchmaking.
-                            Supports LAN play and uses a structured layered architecture.
-                        </p>
+                        <h3 class="card-title" data-i18n="p.lexclash.title">LexClash – Multiplayer Word Game (.NET)</h3>
+                        <p class="card-text" data-i18n="p.lexclash.one">A real-time multiplayer word game on ASP.NET Core, Blazor and SignalR.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/LexClash" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for LexClash</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/LexClash" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> LexClash</span></a>
+                                <a href="#project/lexclash" class="btn-glass card-primary" data-open-project="lexclash"><span data-i18n="cta.view">View project</span><span class="sr-only">: LexClash</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev" data-category="software"
-                    data-primary-label="Watch demo video">
+                <article class="project-card glass glass--smoke project-card--dev" data-category="software" data-slug="blazor-quiz">
                     <div class="card-media card-media--blazor">
-                        <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail" width="1664" height="1086" loading="lazy">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Blazor Quiz App</span>
-                        </button>
+                        <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail" data-i18n-attr="alt:alt.blazor" width="1664" height="1086" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="https://youtube.com/shorts/1ZMpSiP8zyI" class="card-primary" target="_blank" rel="noopener noreferrer">Blazor Quiz App (C# / .NET)</a>
-                        </h3>
-                        <p class="card-text">
-                            A web-based quiz application built with Blazor and C#. The architecture cleanly
-                            separates data, logic, and UI — a pattern that scales well to larger .NET projects.
-                            Built as a demonstration of component-driven development in a .NET environment.
-                        </p>
+                        <h3 class="card-title">Blazor Quiz App (C# / .NET)</h3>
+                        <p class="card-text" data-i18n="p.blazor.one">A quiz app that keeps data, logic and UI cleanly apart in Blazor and C#.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Blazor Quiz App</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Blazor Quiz App</span></a>
+                                <a href="#project/blazor-quiz" class="btn-glass card-primary" data-open-project="blazor-quiz"><span data-i18n="cta.view">View project</span><span class="sr-only">: Blazor Quiz App</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev project-card--wide-md" data-category="software"
-                    data-primary-label="Watch demo video">
+                <article class="project-card glass glass--smoke project-card--dev project-card--wide-md" data-category="software" data-slug="wpf-crud">
                     <div class="card-media card-media--wpf">
-                        <img src="./images/wpf.png" alt="WPF App thumbnail" width="1399" height="1393" loading="lazy">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> WPF CRUD App</span>
-                        </button>
+                        <img src="./images/wpf.png" alt="WPF App thumbnail" data-i18n-attr="alt:alt.wpf" width="1399" height="1393" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="https://youtube.com/shorts/s-zSkuEjrJ0" class="card-primary" target="_blank" rel="noopener noreferrer">WPF CRUD App (C# / .NET)</a>
-                        </h3>
-                        <p class="card-text">
-                            A desktop application built with WPF and C# for managing structured data.
-                            Covers the full CRUD cycle with a responsive UI, data binding, and a clean
-                            separation between the interface and the data layer.
-                        </p>
+                        <h3 class="card-title">WPF CRUD App (C# / .NET)</h3>
+                        <p class="card-text" data-i18n="p.wpf.one">A desktop app for structured data with the full CRUD cycle and WPF data binding.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2025</span>
                             </div>
-                            <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for WPF CRUD App</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> WPF CRUD App</span></a>
+                                <a href="#project/wpf-crud" class="btn-glass card-primary" data-open-project="wpf-crud"><span data-i18n="cta.view">View project</span><span class="sr-only">: WPF CRUD App</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--pair" data-category="research"
-                    data-primary-label="Visit the gallery">
+                <article class="project-card glass glass--smoke project-card--pair" data-category="research" data-slug="digitization">
                     <div class="card-media card-media--archive">
-                        <img src="./images/digitization.png" alt="Historical archive photograph from the Digitization Project" width="800" height="520" loading="lazy">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Digitization Project</span>
-                        </button>
+                        <img src="./images/digitization.png" alt="Catalog photograph from the 1914 Baltic Exhibition in Malmö" data-i18n-attr="alt:alt.archive" width="800" height="520" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">
-                            <a href="https://roerstrand.github.io/Digitization-Project/" class="card-primary" target="_blank" rel="noopener noreferrer">Digitization Project</a>
-                        </h3>
-                        <p class="card-text">
-                            A public, responsive gallery presenting digitized historical material with a clear
-                            structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
-                            Includes dark mode support and a lightweight slideshow optimized for
-                            accessibility and cross-device browsing.
-                        </p>
+                        <h3 class="card-title" data-i18n="p.digi.title">Digitization Project</h3>
+                        <p class="card-text" data-i18n="p.digi.one">A public online collection of digitized photographs and press clippings from the 1914 Baltic Exhibition in Malmö.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2023</span>
                             </div>
-                            <a href="https://github.com/roerstrand/Digitization-Project" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Digitization Project</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="https://github.com/roerstrand/Digitization-Project" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Digitization Project</span></a>
+                                <a href="#project/digitization" class="btn-glass card-primary" data-open-project="digitization"><span data-i18n="cta.view">View project</span><span class="sr-only">: Digitization Project</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--pair" data-category="research"
-                    data-primary-label="Read the thesis">
+                <article class="project-card glass glass--smoke project-card--pair" data-category="research" data-slug="digital-inclusion">
                     <div class="card-media card-media--logo">
-                        <img src="./images/thesis.png" alt="University of Borås logo" width="236" height="214" loading="lazy">
-                        <button type="button" class="preview-btn" data-preview hidden>
-                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Digital Inclusion in Public Libraries</span>
-                        </button>
+                        <img src="./images/thesis.png" alt="University of Borås logo" data-i18n-attr="alt:alt.hb" width="236" height="214" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <span class="card-label">Published Research</span>
-                        <h3 class="card-title">Digital Inclusion in Public Libraries</h3>
-                        <p class="card-text">
-                            Digitization Through the Eyes of Immigrants Learning a New Language: A user-centered
-                            research project examining digital accessibility in public libraries with a focus
-                            on inclusion, usability, and access to information. Published at University of Borås.
-                        </p>
+                        <span class="card-label" data-i18n="label.research">Published Research</span>
+                        <h3 class="card-title card-title--question" data-i18n="p.thesis.question">What keeps people learning Swedish from using the library’s digital services?</h3>
+                        <p class="card-text" data-i18n="p.thesis.one">Digital Inclusion in Public Libraries – an interview study with ten immigrants learning a new language.</p>
                         <div class="card-footer">
                             <div class="card-meta">
                                 <span class="project-year">2024</span>
                             </div>
-                            <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="btn-glass card-primary" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Read the thesis
-                            </a>
+                            <div class="card-actions">
+                                <a href="#project/digital-inclusion" class="btn-glass card-primary" data-open-project="digital-inclusion"><span data-i18n="cta.view">View project</span><span class="sr-only">: Digital Inclusion in Public Libraries</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="about__panel glass glass--warm">
+                <h2 id="about-title" data-i18n="about.title">About</h2>
+                <p class="about__text" data-i18n="about.text">
+                    My work sits at the intersection of software development and information management —
+                    from full-stack applications and AI integrations to published research on digital accessibility.
+                    I build systems that are structured, maintainable, and grounded in real user needs.
+                </p>
+                <ul class="about__skills" aria-label="Areas of expertise" data-i18n-attr="aria-label:about.skills">
+                    <li data-i18n="skill.itsm">IT Systems &amp; Application Management</li>
+                    <li data-i18n="skill.digi">Digitalization</li>
+                    <li data-i18n="skill.ai">AI &amp; Automation</li>
+                    <li data-i18n="skill.api">API Integration</li>
+                    <li>.NET, SQL, JavaScript, Python</li>
+                </ul>
             </div>
         </section>
 
@@ -278,18 +284,18 @@
             <div class="contact-section__light" aria-hidden="true"></div>
             <div class="contact-panel glass glass--warm" data-contact-panel>
                 <span class="contact-panel__glow" aria-hidden="true"></span>
-                <h2 id="contact-title">Get in touch</h2>
-                <p class="contact-sub">Have a project, a question, or just want to connect?</p>
+                <h2 id="contact-title" data-i18n="contact.title">Get in touch</h2>
+                <p class="contact-sub" data-i18n="contact.sub">Have a project, a question, or just want to connect?</p>
                 <div class="contact-links">
                     <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn-glass btn-glass--contact" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
                     </a>
                     <a href="mailto:robinerikstrandberg@outlook.com" class="btn-glass btn-glass--contact">
-                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        <i class="fas fa-envelope" aria-hidden="true"></i> <span data-i18n="common.email">Email</span>
                     </a>
                     <button type="button" class="btn-quiet" data-copy-email="robinerikstrandberg@outlook.com" hidden>
                         <i class="far fa-copy" aria-hidden="true" data-copy-icon></i>
-                        <span data-copy-label>Copy email address</span>
+                        <span data-copy-label data-i18n="copy.idle">Copy email address</span>
                     </button>
                 </div>
                 <p class="sr-only" role="status" data-copy-status></p>
@@ -301,28 +307,287 @@
         © 2026 Robin Erik Strandberg
     </footer>
 
-    <dialog class="preview glass glass--smoke" aria-labelledby="preview-title" data-preview-dialog>
-        <div class="preview__inner">
-            <div class="preview__head">
-                <h2 id="preview-title" class="preview__title" data-preview-title></h2>
-                <button type="button" class="preview__close" data-preview-close>
-                    <i class="fas fa-xmark" aria-hidden="true"></i><span>Close</span><span class="sr-only"> preview</span>
+    <dialog class="pv glass glass--smoke" aria-labelledby="pv-title" data-pv>
+        <div class="pv__inner">
+            <div class="pv__head">
+                <div>
+                    <p class="pv__eyebrow" data-pv-eyebrow></p>
+                    <h2 id="pv-title" class="pv__title" data-pv-title></h2>
+                </div>
+                <button type="button" class="pv__close" data-pv-close>
+                    <i class="fas fa-xmark" aria-hidden="true"></i><span data-i18n="pv.close">Close</span>
                 </button>
             </div>
-            <div class="preview__stage" data-preview-stage>
-                <img class="preview__img" alt="" data-preview-img>
-            </div>
-            <p class="preview__caption" data-preview-caption></p>
-            <div class="preview__thumbs" role="group" aria-label="Project images" data-preview-thumbs></div>
-            <div class="preview__actions">
-                <button type="button" class="btn-glass btn-glass--ghost" data-preview-zoom hidden>
-                    <i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i>
-                    <span data-preview-zoom-label>Zoom in</span>
-                </button>
-                <div class="preview__links" data-preview-links></div>
-            </div>
+            <div class="pv__content" data-pv-content></div>
         </div>
     </dialog>
+
+    <template id="pv-martial-store" data-title="Martial Store – Full-Stack E-Commerce Platform" data-title-key="p.martial.title" data-eyebrow-key="pv.martial.eyebrow">
+        <div class="pv__grid">
+            <div class="pv__main">
+                <div class="viewer viewer--large" data-viewer>
+                    <div class="viewer__frame" data-viewer-frame>
+                        <img class="viewer__img" src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" data-i18n-attr="alt:alt.martialAdmin" width="1687" height="1831" data-viewer-img data-pv-media>
+                        <span class="viewer__glare" aria-hidden="true"></span>
+                    </div>
+                    <div class="viewer__bar">
+                        <div class="viewer__controls" role="group" aria-label="Choose a screen" data-i18n-attr="aria-label:viewer.screens">
+                            <button type="button" class="seg" aria-pressed="true" data-view="sales" data-scale="1.18" data-top="0.18" data-glare="0" data-caption="cap.sales" data-i18n="view.sales">Sales overview</button>
+                            <button type="button" class="seg" aria-pressed="false" data-view="products" data-scale="1" data-top="0.46" data-glare="1" data-caption="cap.products" data-i18n="view.products">Product management</button>
+                            <button type="button" class="seg" aria-pressed="false" data-view="store" data-src="./images/martial-store.png" data-alt="alt.martialStore" data-scale="1" data-top="0" data-glare="0" data-caption="cap.store" data-i18n="view.store">Storefront</button>
+                            <button type="button" class="seg" aria-pressed="false" data-view="product" data-src="./images/martial-store-products.png" data-alt="alt.martialProduct" data-scale="1" data-top="0" data-glare="1" data-caption="cap.product" data-i18n="view.product">Product page</button>
+                        </div>
+                        <button type="button" class="btn-glass btn-glass--ghost" data-viewer-zoom>
+                            <i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i><span data-viewer-zoom-label data-i18n="zoom.in">Zoom in</span>
+                        </button>
+                    </div>
+                    <p class="viewer__caption" aria-live="polite" data-viewer-caption data-i18n="cap.sales">Units sold per product, total units and estimated revenue at a glance.</p>
+                </div>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.martial.summary">Apex Core is a full-stack shop for martial-arts equipment. Visitors browse products, read articles, save favourites and fill a cart as guests; signed-in customers check out and see their order history. The admin dashboard lets the owner manage the catalogue and follow what sells.</p>
+                <h3 class="pv__h" data-i18n="pv.detail">Technical detail</h3>
+                <p data-i18n="pv.martial.detail">The JWT lives in an HttpOnly cookie that the browser sends automatically, so client scripts can never read it. Unsafe API requests must carry an X-Requested-With header as CSRF protection, and admin routes are guarded by role-based validation.</p>
+                <ul class="pv__chips">
+                    <li>React + Vite</li>
+                    <li>Node.js + Express</li>
+                    <li>MongoDB Atlas</li>
+                    <li>Jest · Supertest · Vitest</li>
+                </ul>
+                <div class="pv__links">
+                    <a href="https://martial-store-fullstack.vercel.app" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> <span data-i18n="link.live">Open live site</span></a>
+                    <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="btn-glass btn-glass--ghost" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/enterprise-it-platform" class="pv__next" data-open-project="enterprise-it-platform">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.enterprise">Explore the operations platform</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-enterprise-it-platform" data-title="Enterprise IT Operations Platform" data-eyebrow-key="pv.enterprise.eyebrow">
+        <div class="pv__status">
+            <i class="fas fa-person-digging" aria-hidden="true"></i>
+            <span data-i18n="pv.enterprise.status">In progress: Azure resources are provisioned with Terraform as the first step of an AKS migration. The cluster itself is not in Terraform yet.</span>
+        </div>
+        <div class="pv__grid">
+            <div class="pv__main">
+                <div class="arch" data-arch>
+                    <p class="arch__hint" data-i18n="arch.hint">Select a part of the platform to see its role and what it talks to.</p>
+                    <div class="arch__diagram" role="group" aria-label="Platform architecture" data-i18n-attr="aria-label:arch.label">
+                        <div class="arch__tier">
+                            <span class="arch__tier-label" data-i18n="arch.tier.client">Client</span>
+                            <div class="arch__nodes">
+                                <button type="button" class="arch__node" data-node="angular" aria-pressed="false">Angular client</button>
+                            </div>
+                        </div>
+                        <div class="arch__tier">
+                            <span class="arch__tier-label" data-i18n="arch.tier.edge">Edge &amp; API</span>
+                            <div class="arch__nodes">
+                                <button type="button" class="arch__node" data-node="nginx" aria-pressed="false">nginx</button>
+                                <button type="button" class="arch__node" data-node="fastapi" aria-pressed="false">FastAPI app</button>
+                            </div>
+                        </div>
+                        <div class="arch__tier">
+                            <span class="arch__tier-label" data-i18n="arch.tier.services">gRPC services</span>
+                            <div class="arch__nodes">
+                                <button type="button" class="arch__node" data-node="identity" aria-pressed="false">Identity <small>Python</small></button>
+                                <button type="button" class="arch__node" data-node="cmdb" aria-pressed="false">CMDB <small>Python</small></button>
+                                <button type="button" class="arch__node" data-node="incident" aria-pressed="false">Incident <small>Python</small></button>
+                                <button type="button" class="arch__node" data-node="change" aria-pressed="false">Change <small>C# / .NET</small></button>
+                                <button type="button" class="arch__node" data-node="audit" aria-pressed="false">Audit <small>Python</small></button>
+                            </div>
+                        </div>
+                        <div class="arch__tier">
+                            <span class="arch__tier-label" data-i18n="arch.tier.data">Data &amp; messaging</span>
+                            <div class="arch__nodes">
+                                <button type="button" class="arch__node" data-node="postgres" aria-pressed="false">PostgreSQL</button>
+                                <button type="button" class="arch__node" data-node="redis" aria-pressed="false">Redis</button>
+                                <button type="button" class="arch__node" data-node="rabbitmq" aria-pressed="false">RabbitMQ</button>
+                            </div>
+                        </div>
+                        <div class="arch__tier">
+                            <span class="arch__tier-label" data-i18n="arch.tier.obs">Observability</span>
+                            <div class="arch__nodes">
+                                <button type="button" class="arch__node" data-node="metrics" aria-pressed="false">Prometheus + Grafana</button>
+                                <button type="button" class="arch__node" data-node="jaeger" aria-pressed="false">Jaeger</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch__detail" aria-live="polite" data-arch-detail>
+                        <h3 class="arch__detail-title" data-arch-title></h3>
+                        <p data-arch-text></p>
+                        <p class="arch__detail-rel"><span data-i18n="arch.talks">Connected to:</span> <span data-arch-rel></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.enterprise.summary">An IT operations platform built around a CMDB. An Angular client works with incidents, configuration items, changes and an audit log, served by gRPC microservices in Python and C#/.NET.</p>
+                <h3 class="pv__h" data-i18n="pv.decision">Design decision</h3>
+                <p data-i18n="pv.enterprise.detail">All data access goes through gRPC instead of REST CRUD, and every architecture decision is recorded as one of 19 numbered decision records in the repository.</p>
+                <figure class="pv__figure">
+                    <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform dashboard" data-i18n-attr="alt:alt.enterprise" width="2487" height="1389" loading="lazy">
+                    <figcaption data-i18n="pv.enterprise.figure">Operations dashboard: open incidents, SLA breaches, configuration items and recent changes.</figcaption>
+                </figure>
+                <div class="pv__links">
+                    <a href="https://github.com/roerstrand/enterprise-it-platform" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="link.code">View code on GitHub</span></a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/lexclash" class="pv__next" data-open-project="lexclash">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.lexclash">See the real-time .NET word game</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-lexclash" data-title="LexClash – Multiplayer Word Game (.NET)" data-title-key="p.lexclash.title" data-eyebrow-key="pv.lexclash.eyebrow">
+        <div class="pv__grid">
+            <div class="pv__main">
+                <figure class="pv__shot pv__shot--tall">
+                    <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail" data-i18n-attr="alt:alt.lexclash" width="1133" height="1875" data-pv-media>
+                </figure>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.lexclash.summary">A real-time multiplayer word game built with ASP.NET Core, Blazor and SignalR. Turn-based gameplay with category constraints, dynamic scoring, and session-based matchmaking.</p>
+                <h3 class="pv__h" data-i18n="pv.detail">Technical detail</h3>
+                <p data-i18n="pv.lexclash.detail">SignalR keeps every player’s view in sync as turns change. The game supports LAN play and uses a structured layered architecture.</p>
+                <ul class="pv__chips"><li>ASP.NET Core</li><li>Blazor</li><li>SignalR</li></ul>
+                <div class="pv__links">
+                    <a href="https://youtube.com/shorts/R_o0vKZCoqU" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> <span data-i18n="link.demo">Watch demo video</span></a>
+                    <a href="https://github.com/roerstrand/LexClash" class="btn-glass btn-glass--ghost" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/blazor-quiz" class="pv__next" data-open-project="blazor-quiz">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.blazor">See the layered Blazor quiz</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-blazor-quiz" data-title="Blazor Quiz App (C# / .NET)" data-eyebrow-key="pv.blazor.eyebrow">
+        <div class="pv__grid">
+            <div class="pv__main">
+                <figure class="pv__shot">
+                    <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail" data-i18n-attr="alt:alt.blazor" width="1664" height="1086" data-pv-media>
+                </figure>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.blazor.summary">A web-based quiz application built with Blazor and C#, made as a demonstration of component-driven development in a .NET environment.</p>
+                <h3 class="pv__h" data-i18n="pv.decision">Design decision</h3>
+                <p data-i18n="pv.blazor.detail">The architecture cleanly separates data, logic, and UI — a pattern that scales well to larger .NET projects.</p>
+                <ul class="pv__chips"><li>Blazor</li><li>C#</li><li>.NET</li></ul>
+                <div class="pv__links">
+                    <a href="https://youtube.com/shorts/1ZMpSiP8zyI" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> <span data-i18n="link.demo">Watch demo video</span></a>
+                    <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn-glass btn-glass--ghost" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/wpf-crud" class="pv__next" data-open-project="wpf-crud">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.wpf">See the WPF desktop app</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-wpf-crud" data-title="WPF CRUD App (C# / .NET)" data-eyebrow-key="pv.wpf.eyebrow">
+        <div class="pv__grid">
+            <div class="pv__main">
+                <figure class="pv__shot">
+                    <img src="./images/wpf.png" alt="WPF App thumbnail" data-i18n-attr="alt:alt.wpf" width="1399" height="1393" data-pv-media>
+                </figure>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.wpf.summary">A desktop application built with WPF and C# for managing structured data, covering the full CRUD cycle with a responsive UI.</p>
+                <h3 class="pv__h" data-i18n="pv.decision">Design decision</h3>
+                <p data-i18n="pv.wpf.detail">Data binding connects the interface to the data, with a clean separation between the interface and the data layer.</p>
+                <ul class="pv__chips"><li>WPF</li><li>C#</li><li>.NET</li></ul>
+                <div class="pv__links">
+                    <a href="https://youtube.com/shorts/s-zSkuEjrJ0" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> <span data-i18n="link.demo">Watch demo video</span></a>
+                    <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="btn-glass btn-glass--ghost" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/digitization" class="pv__next" data-open-project="digitization">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.digi">See the digitized collection</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-digitization" data-title="Digitization Project" data-title-key="p.digi.title" data-eyebrow-key="pv.digi.eyebrow">
+        <div class="pv__grid">
+            <div class="pv__main">
+                <figure class="pv__archive">
+                    <img src="./images/digitization.png" alt="Catalog photograph from the 1914 Baltic Exhibition in Malmö" data-i18n-attr="alt:alt.archive" width="800" height="520" data-pv-media>
+                    <figcaption data-i18n="pv.digi.caption">Catalog photograph from the Baltic Exhibition, Malmö 1914: a tower and the Hufvudrestaurangen sign across the exhibition lake. Original held by Malmö City Library.</figcaption>
+                </figure>
+                <ol class="pv__pipeline" aria-label="Digitization pipeline" data-i18n-attr="aria-label:pv.digi.pipeline">
+                    <li><strong data-i18n="pipe.source">Source material</strong><span data-i18n="pipe.source.t">Catalogs and photographs from Malmö City Library; newspaper clippings from Malmö City Archive</span></li>
+                    <li><strong data-i18n="pipe.scan">Digitization</strong><span data-i18n="pipe.scan.t">High-resolution scans, including 37 pages of clippings</span></li>
+                    <li><strong>Metadata</strong><span data-i18n="pipe.meta.t">Dublin Core descriptions and TEI XML transcriptions</span></li>
+                    <li><strong data-i18n="pipe.web">Public website</strong><span data-i18n="pipe.web.t">XSLT turns TEI into HTML pages anyone can browse</span></li>
+                </ol>
+            </div>
+            <div class="pv__aside">
+                <p class="pv__summary" data-i18n="pv.digi.summary">The Baltic Exhibition ran in Malmö from 15 May to 4 October 1914, with pavilions from Sweden, Denmark, Germany and Russia that were torn down afterwards. This project returns the catalog photographs and archival texts to public view, with context about the buildings and the moment.</p>
+                <h3 class="pv__h" data-i18n="pv.context">Context</h3>
+                <p data-i18n="pv.digi.detail">It was the largest exhibition in the Nordic countries at the time and the last major showcase of the Jugend style in Sweden. It closed two months after the outbreak of the First World War.</p>
+                <ul class="pv__chips"><li>Dublin Core</li><li>TEI XML</li><li>XSLT</li><li>HTML · CSS · JavaScript</li></ul>
+                <div class="pv__links">
+                    <a href="https://roerstrand.github.io/Digitization-Project/" class="btn-glass" target="_blank" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> <span data-i18n="link.gallery">Visit the collection</span></a>
+                    <a href="https://github.com/roerstrand/Digitization-Project" class="btn-glass btn-glass--ghost" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        <a href="#project/digital-inclusion" class="pv__next" data-open-project="digital-inclusion">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.thesis">Read the research on digital inclusion</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
+
+    <template id="pv-digital-inclusion" data-title="Digital Inclusion in Public Libraries" data-title-key="pv.thesis.title" data-eyebrow-key="pv.thesis.eyebrow">
+        <div class="pv__research">
+            <div class="pv__sender">
+                <img src="./images/thesis.png" alt="University of Borås logo" data-i18n-attr="alt:alt.hb" width="236" height="214" data-pv-media>
+                <div>
+                    <p class="pv__sender-name" data-i18n="pv.thesis.sender">University of Borås · Bachelor thesis · 2024</p>
+                    <p class="pv__sender-authors" data-i18n="pv.thesis.authors">Yasameen Mohammed &amp; Robin Strandberg</p>
+                </div>
+            </div>
+            <p class="pv__fulltitle" lang="en">Digitalization Through the Eyes of Immigrants Learning a New Language: User-Centered Research of Public Library Digital Accessibility</p>
+            <blockquote class="pv__question">
+                <p class="pv__question-label" data-i18n="pv.thesis.purposeLabel">Purpose</p>
+                <p data-i18n="pv.thesis.purpose">The study explores challenges to fair and equal access to digital services in Swedish public libraries, measured against the Swedish Library Act and its principles of democracy and accessibility.</p>
+            </blockquote>
+            <div class="pv__facts">
+                <div>
+                    <h3 class="pv__h" data-i18n="pv.thesis.methodH">Method</h3>
+                    <p data-i18n="pv.thesis.method">Semi-structured interviews with ten immigrants learning Swedish through SFI, SVA and/or the Red Cross activity “Träna Svenska”.</p>
+                </div>
+                <div>
+                    <h3 class="pv__h" data-i18n="pv.thesis.theoryH">Theory</h3>
+                    <p data-i18n="pv.thesis.theory">Social constructionism as meta-theory, combined with information foraging theory to understand how users navigate digital resources.</p>
+                </div>
+                <div>
+                    <h3 class="pv__h" data-i18n="pv.thesis.findingsH">Findings</h3>
+                    <p data-i18n="pv.thesis.findings">Limited multilingual support and complex, non-intuitive interfaces kept several participants from using the services. Better translation, digital literacy training and personal assistance are needed for digital inclusion.</p>
+                </div>
+            </div>
+            <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="btn-primary btn-primary--dark" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-book-open" aria-hidden="true"></i> <span data-i18n="link.thesis">Read the thesis</span>
+            </a>
+        </div>
+        <a href="#project/digitization" class="pv__next" data-open-project="digitization">
+            <span class="pv__next-label" data-i18n="next.label">Next</span>
+            <span class="pv__next-title" data-i18n="next.digi">See the digitized collection</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </template>
 </body>
 
 </html>

@@ -89,3 +89,43 @@ test('previewLinks does not repeat a code link that is the primary destination',
         [{ href: 'https://github.com/x', label: 'View code on GitHub' }],
     );
 });
+
+const { parseRoute, routeFor, resolveLanguage, translate, viewTransform } = require('../js/logic.js');
+
+test('parseRoute reads a project slug from the hash', () => {
+    assert.deepEqual(parseRoute('#project/martial-store'), { project: 'martial-store' });
+});
+
+test('parseRoute ignores page anchors, empty hashes and malformed slugs', () => {
+    assert.deepEqual(parseRoute('#projects'), { project: null });
+    assert.deepEqual(parseRoute(''), { project: null });
+    assert.deepEqual(parseRoute('#project/Bad Slug!'), { project: null });
+});
+
+test('routeFor builds the stable hash for a project', () => {
+    assert.equal(routeFor('enterprise-it-platform'), '#project/enterprise-it-platform');
+});
+
+test('resolveLanguage prefers the URL, then the stored choice, then English', () => {
+    assert.equal(resolveLanguage({ param: 'sv', stored: 'en' }), 'sv');
+    assert.equal(resolveLanguage({ param: null, stored: 'sv' }), 'sv');
+    assert.equal(resolveLanguage({ param: 'de', stored: null }), 'en');
+    assert.equal(resolveLanguage({}), 'en');
+});
+
+test('translate falls back to English and then to the key', () => {
+    const dict = { en: { a: 'Hello', b: 'Only English' }, sv: { a: 'Hej' } };
+    assert.equal(translate(dict, 'sv', 'a'), 'Hej');
+    assert.equal(translate(dict, 'sv', 'b'), 'Only English');
+    assert.equal(translate(dict, 'sv', 'missing'), 'missing');
+});
+
+test('filterStatus speaks Swedish when asked', () => {
+    assert.equal(filterStatus(7, 'Alla', 'sv'), 'Alla: visar 7 projekt');
+    assert.equal(filterStatus(1, 'Mjukvara', 'sv'), 'Mjukvara: visar 1 projekt');
+});
+
+test('viewTransform moves the chosen part of the image to the top of the frame', () => {
+    assert.deepEqual(viewTransform(1.18, 0.18), { scale: 1.18, ty: '-21.24%' });
+    assert.deepEqual(viewTransform(1, 0), { scale: 1, ty: '0%' });
+});
