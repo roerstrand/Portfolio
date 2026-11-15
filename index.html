@@ -5,17 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
     <title>Robin Erik Strandberg – Portfolio</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/logic.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
-    <header class="hero">
+    <header class="hero" data-hero>
         <div class="hero__light" aria-hidden="true"></div>
         <div class="hero__stage">
-            <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo" width="232" height="242">
+            <div class="portrait">
+                <span class="portrait__shadow" aria-hidden="true"></span>
+                <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo" width="232" height="242">
+            </div>
             <div class="hero__panel glass glass--hero">
+                <span class="hero__glare" aria-hidden="true"></span>
                 <h1>Robin Erik Strandberg</h1>
                 <p class="tagline">
                     <span class="tagline__group"><span class="tagline__item">IT Systems &amp; Application Management</span><span class="tagline__pipe"> | </span><span class="tagline__item">Digitalization</span></span>
@@ -43,19 +51,37 @@
                     </a>
                 </nav>
             </div>
+            <a href="#projects" class="explore-link" data-explore>
+                <span>Explore projects</span>
+                <i class="fas fa-arrow-down" aria-hidden="true"></i>
+            </a>
         </div>
     </header>
 
     <main>
         <section id="projects" class="projects" aria-labelledby="projects-title">
-            <h2 id="projects-title">Projects</h2>
-            <div class="projects-grid">
+            <h2 id="projects-title" tabindex="-1">Projects</h2>
+
+            <div class="filter-bar" role="group" aria-label="Filter projects" data-filter-bar hidden>
+                <button type="button" class="filter-bar__btn" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter-bar__btn" data-filter="software" aria-pressed="false">Software</button>
+                <button type="button" class="filter-bar__btn" data-filter="research" aria-pressed="false">Digitization &amp; Research</button>
+            </div>
+            <p class="sr-only" role="status" data-filter-status></p>
+
+            <div class="projects-grid" data-grid data-active-filter="all">
                 <div class="projects-grid__light" aria-hidden="true"></div>
 
-                <article class="project-card glass glass--smoke project-card--featured">
+                <article class="project-card glass glass--smoke project-card--featured" data-category="software"
+                    data-primary-label="Open live site"
+                    data-gallery="./images/martial-store-admin.png|Admin dashboard with sales chart and product table;./images/martial-store.png|Storefront with hero and popular gear;./images/martial-store-products.png|Product page with reviews"
+                    data-zoomable>
                     <div class="card-media card-media--martial">
                         <img src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" width="1687" height="1831">
                         <span class="card-label card-label--on-media">Featured Project</span>
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Martial Store</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">
@@ -71,16 +97,20 @@
                                 <span class="project-year">2026</span>
                                 <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
                             </div>
-                            <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="btn-glass" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Martial Store</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--lead">
+                <article class="project-card glass glass--smoke project-card--lead" data-category="software"
+                    data-primary-label="View code on GitHub" data-zoomable>
                     <div class="card-media card-media--enterprise">
-                        <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform" width="2487" height="1389">
+                        <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform dashboard" width="2487" height="1389">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Enterprise IT Operations Platform</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">Enterprise IT Operations Platform</h3>
@@ -95,16 +125,20 @@
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/enterprise-it-platform" class="btn-glass card-primary" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/enterprise-it-platform" class="btn-glass card-primary" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Enterprise IT Operations Platform</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev">
+                <article class="project-card glass glass--smoke project-card--dev" data-category="software"
+                    data-primary-label="Watch demo video">
                     <div class="card-media card-media--lexclash">
                         <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail" width="1133" height="1875" loading="lazy">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> LexClash</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">
@@ -119,16 +153,20 @@
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/LexClash" class="btn-glass" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/LexClash" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for LexClash</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev">
+                <article class="project-card glass glass--smoke project-card--dev" data-category="software"
+                    data-primary-label="Watch demo video">
                     <div class="card-media card-media--blazor">
                         <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail" width="1664" height="1086" loading="lazy">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Blazor Quiz App</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">
@@ -143,16 +181,20 @@
                             <div class="card-meta">
                                 <span class="project-year">2026</span>
                             </div>
-                            <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn-glass" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Blazor Quiz App</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--dev project-card--wide-md">
+                <article class="project-card glass glass--smoke project-card--dev project-card--wide-md" data-category="software"
+                    data-primary-label="Watch demo video">
                     <div class="card-media card-media--wpf">
                         <img src="./images/wpf.png" alt="WPF App thumbnail" width="1399" height="1393" loading="lazy">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> WPF CRUD App</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">
@@ -167,16 +209,20 @@
                             <div class="card-meta">
                                 <span class="project-year">2025</span>
                             </div>
-                            <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="btn-glass" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for WPF CRUD App</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--pair">
+                <article class="project-card glass glass--smoke project-card--pair" data-category="research"
+                    data-primary-label="Visit the gallery">
                     <div class="card-media card-media--archive">
-                        <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail" width="800" height="520" loading="lazy">
+                        <img src="./images/digitization.png" alt="Historical archive photograph from the Digitization Project" width="800" height="520" loading="lazy">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Digitization Project</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <h3 class="card-title">
@@ -192,16 +238,20 @@
                             <div class="card-meta">
                                 <span class="project-year">2023</span>
                             </div>
-                            <a href="https://github.com/roerstrand/Digitization-Project" class="btn-glass" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            <a href="https://github.com/roerstrand/Digitization-Project" class="btn-glass" data-code target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> for Digitization Project</span>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--pair">
+                <article class="project-card glass glass--smoke project-card--pair" data-category="research"
+                    data-primary-label="Read the thesis">
                     <div class="card-media card-media--logo">
-                        <img src="./images/thesis.png" alt="Högskolan i Borås logotyp" width="236" height="214" loading="lazy">
+                        <img src="./images/thesis.png" alt="University of Borås logo" width="236" height="214" loading="lazy">
+                        <button type="button" class="preview-btn" data-preview hidden>
+                            <i class="fas fa-expand" aria-hidden="true"></i> Preview<span class="sr-only"> Digital Inclusion in Public Libraries</span>
+                        </button>
                     </div>
                     <div class="card-body">
                         <span class="card-label">Published Research</span>
@@ -226,7 +276,8 @@
 
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="contact-section__light" aria-hidden="true"></div>
-            <div class="contact-panel glass glass--warm">
+            <div class="contact-panel glass glass--warm" data-contact-panel>
+                <span class="contact-panel__glow" aria-hidden="true"></span>
                 <h2 id="contact-title">Get in touch</h2>
                 <p class="contact-sub">Have a project, a question, or just want to connect?</p>
                 <div class="contact-links">
@@ -236,7 +287,12 @@
                     <a href="mailto:robinerikstrandberg@outlook.com" class="btn-glass btn-glass--contact">
                         <i class="fas fa-envelope" aria-hidden="true"></i> Email
                     </a>
+                    <button type="button" class="btn-quiet" data-copy-email="robinerikstrandberg@outlook.com" hidden>
+                        <i class="far fa-copy" aria-hidden="true" data-copy-icon></i>
+                        <span data-copy-label>Copy email address</span>
+                    </button>
                 </div>
+                <p class="sr-only" role="status" data-copy-status></p>
             </div>
         </section>
     </main>
@@ -244,6 +300,29 @@
     <footer>
         © 2026 Robin Erik Strandberg
     </footer>
+
+    <dialog class="preview glass glass--smoke" aria-labelledby="preview-title" data-preview-dialog>
+        <div class="preview__inner">
+            <div class="preview__head">
+                <h2 id="preview-title" class="preview__title" data-preview-title></h2>
+                <button type="button" class="preview__close" data-preview-close>
+                    <i class="fas fa-xmark" aria-hidden="true"></i><span>Close</span><span class="sr-only"> preview</span>
+                </button>
+            </div>
+            <div class="preview__stage" data-preview-stage>
+                <img class="preview__img" alt="" data-preview-img>
+            </div>
+            <p class="preview__caption" data-preview-caption></p>
+            <div class="preview__thumbs" role="group" aria-label="Project images" data-preview-thumbs></div>
+            <div class="preview__actions">
+                <button type="button" class="btn-glass btn-glass--ghost" data-preview-zoom hidden>
+                    <i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i>
+                    <span data-preview-zoom-label>Zoom in</span>
+                </button>
+                <div class="preview__links" data-preview-links></div>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
