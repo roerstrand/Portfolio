@@ -4,235 +4,242 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Robin Erik Strandberg – Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
-    <header>
-    <!-- HERO -->
-    <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo">
-    <h1>Robin Erik Strandberg</h1>
-    <p class="tagline">IT Systems &amp; Application Management | Digitalization | AI &amp; Automation | API Integration | .NET, SQL, JavaScript, Python</p>
-
-    <p class="intro">
-        My work sits at the intersection of software development and information management —
-        from full-stack applications and AI integrations to published research on digital accessibility.
-        I build systems that are structured, maintainable, and grounded in real user needs.
-    </p>
-
-    <div class="social-links">
-        <a href="https://github.com/roerstrand" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/robinerikstrandberg/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:robinerikstrandberg@outlook.com" aria-label="E-post"><i class="fas fa-envelope"></i></a>
-    </div>
-</header>
-
-    <!-- PROJECTS -->
-<section id="projects" class="gradient">
-    <h2>Projects</h2>
-    <div class="container">
-        <div class="row">
-
-            <!-- FEATURED -->
-            <div class="w-100"></div>
-            <div class="col-md-8 mb-4">
-    <a href="https://martial-store-fullstack.vercel.app" class="card-link-wrapper" target="_blank">
-        <div class="card project-card project-card--featured w-100">
-            <span class="badge-featured">Featured Project</span>
-            <img src="./images/martial-store-admin.png"
-                 alt="Martial Store admin dashboard"
-                 class="featured-img">
-            <div class="card-body">
-                <h5 class="card-title">Martial Store – Full-Stack E-Commerce Platform</h5>
-                <p class="card-text">
-                    A full-stack e-commerce platform built with React, Express and MongoDB Atlas.
-                    Features product management, user authentication, customer accounts,
-                    and an admin dashboard. Deployed and live with a cloud-hosted backend and database.
+    <header class="hero">
+        <div class="hero__light" aria-hidden="true"></div>
+        <div class="hero__stage">
+            <img src="./images/profile.png" alt="Robin Erik Strandberg" class="profile-photo" width="232" height="242">
+            <div class="hero__panel glass glass--hero">
+                <h1>Robin Erik Strandberg</h1>
+                <p class="tagline">
+                    <span class="tagline__group"><span class="tagline__item">IT Systems &amp; Application Management</span><span class="tagline__pipe"> | </span><span class="tagline__item">Digitalization</span></span>
+                    <span class="tagline__sep" aria-hidden="true">|</span>
+                    <span class="tagline__group">AI &amp; Automation | API Integration</span>
+                    <span class="tagline__sep" aria-hidden="true">|</span>
+                    <span class="tagline__group">.NET, SQL, JavaScript, Python</span>
                 </p>
-                <span class="project-year">2026</span>
-                <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <a href="https://github.com/roerstrand/martial-store-fullstack-dev"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
+
+                <p class="intro">
+                    My work sits at the intersection of software development and information management —
+                    from full-stack applications and AI integrations to published research on digital accessibility.
+                    I build systems that are structured, maintainable, and grounded in real user needs.
+                </p>
+
+                <nav class="social-links" aria-label="Profiles and contact">
+                    <a href="https://github.com/roerstrand" class="btn-glass btn-glass--hero" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
                     </a>
-                    <span class="live-badge"><i class="fas fa-circle"></i> Live</span>
-                </div>
+                    <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn-glass btn-glass--hero" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:robinerikstrandberg@outlook.com" class="btn-glass btn-glass--hero">
+                        <i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span>
+                    </a>
+                </nav>
             </div>
         </div>
-    </a>
-</div>
+    </header>
 
-<div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://github.com/roerstrand/enterprise-it-platform"
-       class="card-link-wrapper"
-       target="_blank">
-        <div class="card project-card w-100">
-            <img src="./images/enterprise-it-platform.png"
-                 alt="Enterprise IT Operations Platform">
-            <div class="card-body">
-                <h5 class="card-title">Enterprise IT Operations Platform</h5>
-                <p class="card-text">
-                    An in-progress IT operations platform built around a CMDB.
-                    It combines an Angular client with Python/FastAPI gRPC services
-                    and a C#/.NET Change Service. Features include JWT-based
-                    role authorization, incident management, audit logging, and
-                    PostgreSQL, Redis, RabbitMQ, Prometheus, Grafana and Jaeger.
-                </p>
-                <span class="project-year">2026</span>
-                <div class="mt-3">
-                    <a href="https://github.com/roerstrand/enterprise-it-platform"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>       
+    <main>
+        <section id="projects" class="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="projects-grid__light" aria-hidden="true"></div>
 
-            <div class="w-100"></div>
-            <div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://youtube.com/shorts/R_o0vKZCoqU" class="card-link-wrapper" target="_blank">
-        <div class="card project-card w-100">
-            <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">LexClash – Multiplayer Word Game (.NET)</h5>
-                <p class="card-text">
-                    A real-time multiplayer word game built with ASP.NET Core, Blazor and SignalR.
-                    Turn-based gameplay with category constraints, dynamic scoring, and session-based matchmaking.
-                    Supports LAN play and uses a structured layered architecture.
-                </p>
-                <span class="project-year">2026</span>
-                <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <a href="https://github.com/roerstrand/LexClash"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://youtube.com/shorts/1ZMpSiP8zyI" class="card-link-wrapper" target="_blank">
-        <div class="card project-card w-100">
-            <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">Blazor Quiz App (C# / .NET)</h5>
-                <p class="card-text">
-                    A web-based quiz application built with Blazor and C#. The architecture cleanly
-                    separates data, logic, and UI — a pattern that scales well to larger .NET projects.
-                    Built as a demonstration of component-driven development in a .NET environment.
-                </p>
-                <span class="project-year">2026</span>
-                <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-
-<div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://youtube.com/shorts/s-zSkuEjrJ0" class="card-link-wrapper" target="_blank">
-        <div class="card project-card w-100">
-            <img src="./images/wpf.png" alt="WPF App thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">WPF CRUD App (C# / .NET)</h5>
-                <p class="card-text">
-                    A desktop application built with WPF and C# for managing structured data.
-                    Covers the full CRUD cycle with a responsive UI, data binding, and a clean
-                    separation between the interface and the data layer.
-                </p>
-                <span class="project-year">2025</span>
-              <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <a href="https://github.com/roerstrand/.NET-WPF-CRUD"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-
-<div class="col-md-6 col-lg-4 mb-4">
-    <a href="https://roerstrand.github.io/Digitization-Project/" class="card-link-wrapper" target="_blank">
-        <div class="card project-card w-100">
-            <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail">
-            <div class="card-body">
-                <h5 class="card-title">Digitization Project</h5>
-                <p class="card-text">
-                    A public, responsive gallery presenting digitized historical material with a clear
-                    structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
-                    Includes dark mode support and a lightweight slideshow optimized for
-                    accessibility and cross-device browsing.
-                </p>
-                <span class="project-year">2023</span>
-                <div class="mt-3 d-flex justify-content-between align-items-center">
-                    <a href="https://github.com/roerstrand/Digitization-Project"
-                       class="btn btn-dark btn-sm"
-                       target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-            <!-- MASTER THESIS -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="text-decoration-none w-100" target="_blank">
-                    <div class="card project-card">
-                        <img src="./images/thesis.png" alt="Högskolan i Borås logotyp">
-                        <div class="card-body">
-                            <span class="badge-research">Published Research</span>
-                            <h5 class="card-title">Digital Inclusion in Public Libraries</h5>
-                            <p class="card-text">
-                                Digitization Through the Eyes of Immigrants Learning a New Language: A user-centered
-                                research project examining digital accessibility in public libraries with a focus
-                                on inclusion, usability, and access to information. Published at University of Borås.
-                            </p>
-                            <span class="project-year">2024</span>
-                            <div class="mt-3">
-                                <span class="btn btn-dark btn-sm">
-                                    <i class="fas fa-external-link-alt"></i> Read the thesis
-                                </span>
+                <article class="project-card glass glass--smoke project-card--featured">
+                    <div class="card-media card-media--martial">
+                        <img src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" width="1687" height="1831">
+                        <span class="card-label card-label--on-media">Featured Project</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="https://martial-store-fullstack.vercel.app" class="card-primary" target="_blank" rel="noopener noreferrer">Martial Store – Full-Stack E-Commerce Platform</a>
+                        </h3>
+                        <p class="card-text">
+                            A full-stack e-commerce platform built with React, Express and MongoDB Atlas.
+                            Features product management, user authentication, customer accounts,
+                            and an admin dashboard. Deployed and live with a cloud-hosted backend and database.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2026</span>
+                                <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
                             </div>
+                            <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="btn-glass" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
                         </div>
                     </div>
-                </a>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--lead">
+                    <div class="card-media card-media--enterprise">
+                        <img src="./images/enterprise-it-platform.png" alt="Enterprise IT Operations Platform" width="2487" height="1389">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Enterprise IT Operations Platform</h3>
+                        <p class="card-text">
+                            An in-progress IT operations platform built around a CMDB.
+                            It combines an Angular client with Python/FastAPI gRPC services
+                            and a C#/.NET Change Service. Features include JWT-based
+                            role authorization, incident management, audit logging, and
+                            PostgreSQL, Redis, RabbitMQ, Prometheus, Grafana and Jaeger.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2026</span>
+                            </div>
+                            <a href="https://github.com/roerstrand/enterprise-it-platform" class="btn-glass card-primary" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--dev">
+                    <div class="card-media card-media--lexclash">
+                        <img src="./images/lexclash.png" alt="LexClash multiplayer word game thumbnail" width="1133" height="1875" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="https://youtube.com/shorts/R_o0vKZCoqU" class="card-primary" target="_blank" rel="noopener noreferrer">LexClash – Multiplayer Word Game (.NET)</a>
+                        </h3>
+                        <p class="card-text">
+                            A real-time multiplayer word game built with ASP.NET Core, Blazor and SignalR.
+                            Turn-based gameplay with category constraints, dynamic scoring, and session-based matchmaking.
+                            Supports LAN play and uses a structured layered architecture.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2026</span>
+                            </div>
+                            <a href="https://github.com/roerstrand/LexClash" class="btn-glass" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--dev">
+                    <div class="card-media card-media--blazor">
+                        <img src="./images/blazor.png" alt="Blazor Quiz App thumbnail" width="1664" height="1086" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="https://youtube.com/shorts/1ZMpSiP8zyI" class="card-primary" target="_blank" rel="noopener noreferrer">Blazor Quiz App (C# / .NET)</a>
+                        </h3>
+                        <p class="card-text">
+                            A web-based quiz application built with Blazor and C#. The architecture cleanly
+                            separates data, logic, and UI — a pattern that scales well to larger .NET projects.
+                            Built as a demonstration of component-driven development in a .NET environment.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2026</span>
+                            </div>
+                            <a href="https://github.com/roerstrand/blazor-quiz-app-layered-architecture" class="btn-glass" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--dev project-card--wide-md">
+                    <div class="card-media card-media--wpf">
+                        <img src="./images/wpf.png" alt="WPF App thumbnail" width="1399" height="1393" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="https://youtube.com/shorts/s-zSkuEjrJ0" class="card-primary" target="_blank" rel="noopener noreferrer">WPF CRUD App (C# / .NET)</a>
+                        </h3>
+                        <p class="card-text">
+                            A desktop application built with WPF and C# for managing structured data.
+                            Covers the full CRUD cycle with a responsive UI, data binding, and a clean
+                            separation between the interface and the data layer.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2025</span>
+                            </div>
+                            <a href="https://github.com/roerstrand/.NET-WPF-CRUD" class="btn-glass" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--pair">
+                    <div class="card-media card-media--archive">
+                        <img src="./images/digitization.png" alt="Digitaliseringsprojekt thumbnail" width="800" height="520" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="https://roerstrand.github.io/Digitization-Project/" class="card-primary" target="_blank" rel="noopener noreferrer">Digitization Project</a>
+                        </h3>
+                        <p class="card-text">
+                            A public, responsive gallery presenting digitized historical material with a clear
+                            structure and contextual captions. Built using HTML, CSS, Bootstrap 4, and JavaScript.
+                            Includes dark mode support and a lightweight slideshow optimized for
+                            accessibility and cross-device browsing.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2023</span>
+                            </div>
+                            <a href="https://github.com/roerstrand/Digitization-Project" class="btn-glass" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass glass--smoke project-card--pair">
+                    <div class="card-media card-media--logo">
+                        <img src="./images/thesis.png" alt="Högskolan i Borås logotyp" width="236" height="214" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Published Research</span>
+                        <h3 class="card-title">Digital Inclusion in Public Libraries</h3>
+                        <p class="card-text">
+                            Digitization Through the Eyes of Immigrants Learning a New Language: A user-centered
+                            research project examining digital accessibility in public libraries with a focus
+                            on inclusion, usability, and access to information. Published at University of Borås.
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-meta">
+                                <span class="project-year">2024</span>
+                            </div>
+                            <a href="https://urn.kb.se/resolve?urn=urn:nbn:se:hb:diva-32813" class="btn-glass card-primary" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Read the thesis
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </section>
 
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-    <h2>Get in touch</h2>
-    <p class="contact-sub">Have a project, a question, or just want to connect?</p>
-    <div class="contact-links">
-        <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn btn-contact" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="mailto:robinerikstrandberg@outlook.com" class="btn btn-contact">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-    </div>
-</section>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="contact-section__light" aria-hidden="true"></div>
+            <div class="contact-panel glass glass--warm">
+                <h2 id="contact-title">Get in touch</h2>
+                <p class="contact-sub">Have a project, a question, or just want to connect?</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/robinerikstrandberg/" class="btn-glass btn-glass--contact" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                    <a href="mailto:robinerikstrandberg@outlook.com" class="btn-glass btn-glass--contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         © 2026 Robin Erik Strandberg
