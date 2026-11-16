@@ -398,6 +398,7 @@
         const content = dialog.querySelector('[data-pv-content]');
         const title = dialog.querySelector('[data-pv-title]');
         const eyebrow = dialog.querySelector('[data-pv-eyebrow]');
+        const liveSlot = dialog.querySelector('[data-pv-live-slot]');
         const closeButton = dialog.querySelector('[data-pv-close]');
         const heroMedia = document.querySelector('[data-hero-media]');
         const state = { stack: [], opener: null, fromHero: false, scrollY: 0, pendingOpener: null, pendingFromHero: false };
@@ -411,6 +412,7 @@
             const fragment = tpl.content.cloneNode(true);
             applyLanguage(fragment);
             content.replaceChildren(fragment);
+            liveSlot.replaceChildren(...content.querySelectorAll('[data-pv-live]'));
             dialog.dataset.project = slug;
 
             if (tpl.dataset.titleKey) {
@@ -570,6 +572,7 @@
         dialog.addEventListener('close', () => {
             root.classList.remove('preview-open');
             content.replaceChildren();
+            liveSlot.replaceChildren();
             if (Math.abs(window.scrollY - state.scrollY) > 1) {
                 window.scrollTo({ top: state.scrollY, behavior: 'instant' });
             }

@@ -1085,10 +1085,33 @@ a {
     border-radius: var(--radius-lg);
 }
 
-.btn-glass.card-primary,
-.btn-glass.card-primary:hover,
-.btn-glass.card-primary:active {
-    transform: none;
+.card-details {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 0.2rem;
+    color: var(--card-text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color var(--dur) var(--ease-out);
+}
+
+.card-details:hover {
+    color: var(--card-text);
+    text-decoration-color: currentColor;
+}
+
+.card-go {
+    position: relative;
+    z-index: 4;
+}
+
+.card-go .fa-arrow-up-right-from-square {
+    font-size: 0.8em;
 }
 
 .card-text {
@@ -1289,8 +1312,9 @@ a {
 
 .card-actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.9rem;
+    gap: 0.5rem 0.9rem;
 }
 
 .card-code {
@@ -1432,6 +1456,34 @@ a {
 
 .pv__title:focus {
     outline: none;
+}
+
+.pv__live-slot:empty {
+    display: none;
+}
+
+.pv__live {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 2.75rem;
+    margin-top: 0.15rem;
+    color: var(--accent1);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+}
+
+.pv__live:hover {
+    color: var(--text-light);
+}
+
+.pv__live:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 0.3rem;
 }
 
 .pv__title:focus-visible {
