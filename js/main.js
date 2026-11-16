@@ -102,7 +102,7 @@
                 } catch (error) {
                 }
                 const url = new URL(window.location.href);
-                if (next === 'en') {
+                if (next === L.DEFAULT_LANGUAGE) {
                     url.searchParams.delete('lang');
                 } else {
                     url.searchParams.set('lang', next);

@@ -95,10 +95,10 @@
                                 <button type="button" class="seg" aria-pressed="true" data-view="sales" data-scale="1.18" data-top="0.18" data-glare="0" data-caption="cap.sales" data-i18n="view.sales">Sales overview</button>
                                 <button type="button" class="seg" aria-pressed="false" data-view="products" data-scale="1" data-top="0.46" data-glare="1" data-caption="cap.products" data-i18n="view.products">Product management</button>
                             </div>
-                            <a href="#project/martial-store" class="btn-glass btn-glass--view" data-open-project="martial-store" data-from-hero>
-                                <span data-i18n="cta.view">View project</span><span class="sr-only">: Martial Store</span>
-                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                            </a>
+                            <div class="showcase__actions">
+                                <a href="#project/martial-store" class="card-details showcase__details" data-open-project="martial-store" data-from-hero><span data-i18n="cta.details">Project details</span><span class="sr-only">: Martial Store</span></a>
+                                <a href="https://martial-store-fullstack.vercel.app" class="btn-glass btn-glass--view" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Visit site</span><span class="sr-only">: Martial Store</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                         <p class="viewer__caption" aria-live="polite" data-viewer-caption data-i18n="cap.sales">Units sold per product, total units and estimated revenue at a glance.</p>
                     </div>
@@ -125,22 +125,21 @@
             <div class="projects-grid" data-grid data-active-filter="all">
                 <div class="projects-grid__light" aria-hidden="true"></div>
 
-                <article class="project-card glass glass--smoke project-card--featured" data-category="software" data-slug="martial-store">
-                    <div class="card-media card-media--martial">
-                        <img src="./images/martial-store-admin.png" alt="Martial Store admin dashboard" data-i18n-attr="alt:alt.martialAdmin" width="1687" height="1831" loading="lazy">
+                <article class="project-card glass glass--smoke project-card--featured" data-category="research" data-slug="digitization">
+                    <div class="card-media card-media--archive">
+                        <img src="./images/digitization.png" alt="Catalog photograph from the 1914 Baltic Exhibition in Malmö" data-i18n-attr="alt:alt.archive" width="800" height="520" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title" data-i18n="p.martial.title">Martial Store – Full-Stack E-Commerce Platform</h3>
-                        <p class="card-text" data-i18n="p.martial.one">A live web shop with storefront, customer accounts and an admin dashboard for products and sales.</p>
+                        <h3 class="card-title" data-i18n="p.digi.title">Digitization Project</h3>
+                        <p class="card-text" data-i18n="p.digi.one">A public online collection of digitized photographs and press clippings from the 1914 Baltic Exhibition in Malmö.</p>
                         <div class="card-footer">
                             <div class="card-meta">
-                                <span class="project-year">2026</span>
-                                <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
+                                <span class="project-year">2023</span>
                             </div>
                             <div class="card-actions">
-                                <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Martial Store</span></a>
-                                <a href="#project/martial-store" class="card-details card-primary" data-open-project="martial-store"><span data-i18n="cta.details">Project details</span><span class="sr-only">: Martial Store</span></a>
-                                <a href="https://martial-store-fullstack.vercel.app" class="btn-glass card-go" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Visit site</span><span class="sr-only">: Martial Store</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                <a href="https://github.com/roerstrand/Digitization-Project" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Digitization Project</span></a>
+                                <a href="#project/digitization" class="card-details card-primary" data-open-project="digitization"><span data-i18n="cta.details">Project details</span><span class="sr-only">: Digitization Project</span></a>
+                                <a href="https://roerstrand.github.io/Digitization-Project/" class="btn-glass card-go" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.gallery">Visit the collection</span><span class="sr-only">: Digitization Project</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -226,21 +225,22 @@
                     </div>
                 </article>
 
-                <article class="project-card glass glass--smoke project-card--pair" data-category="research" data-slug="digitization">
-                    <div class="card-media card-media--archive">
-                        <img src="./images/digitization.png" alt="Catalog photograph from the 1914 Baltic Exhibition in Malmö" data-i18n-attr="alt:alt.archive" width="800" height="520" loading="lazy">
+                <article class="project-card glass glass--smoke project-card--pair" data-category="software" data-slug="martial-store">
+                    <div class="card-media card-media--martial">
+                        <img src="./images/martial-store.png" alt="Martial Store storefront with hero image and popular gear" data-i18n-attr="alt:alt.martialStore" width="1576" height="1887" loading="lazy">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title" data-i18n="p.digi.title">Digitization Project</h3>
-                        <p class="card-text" data-i18n="p.digi.one">A public online collection of digitized photographs and press clippings from the 1914 Baltic Exhibition in Malmö.</p>
+                        <h3 class="card-title" data-i18n="p.martial.title">Martial Store – Full-Stack E-Commerce Platform</h3>
+                        <p class="card-text" data-i18n="p.martial.one">A live web shop with storefront, customer accounts and an admin dashboard for products and sales.</p>
                         <div class="card-footer">
                             <div class="card-meta">
-                                <span class="project-year">2023</span>
+                                <span class="project-year">2026</span>
+                                <span class="live-badge"><i class="fas fa-circle" aria-hidden="true"></i> Live</span>
                             </div>
                             <div class="card-actions">
-                                <a href="https://github.com/roerstrand/Digitization-Project" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Digitization Project</span></a>
-                                <a href="#project/digitization" class="card-details card-primary" data-open-project="digitization"><span data-i18n="cta.details">Project details</span><span class="sr-only">: Digitization Project</span></a>
-                                <a href="https://roerstrand.github.io/Digitization-Project/" class="btn-glass card-go" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.gallery">Visit the collection</span><span class="sr-only">: Digitization Project</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                <a href="https://github.com/roerstrand/martial-store-fullstack-dev" class="card-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Code<span class="sr-only"> <span data-i18n="sr.for">for</span> Martial Store</span></a>
+                                <a href="#project/martial-store" class="card-details card-primary" data-open-project="martial-store"><span data-i18n="cta.details">Project details</span><span class="sr-only">: Martial Store</span></a>
+                                <a href="https://martial-store-fullstack.vercel.app" class="btn-glass card-go" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Visit site</span><span class="sr-only">: Martial Store</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -367,9 +367,9 @@
                 </div>
             </div>
         </div>
-        <a href="#project/enterprise-it-platform" class="pv__next" data-open-project="enterprise-it-platform">
+        <a href="#project/digital-inclusion" class="pv__next" data-open-project="digital-inclusion">
             <span class="pv__next-label" data-i18n="next.label">Next</span>
-            <span class="pv__next-title" data-i18n="next.enterprise">Explore the operations platform</span>
+            <span class="pv__next-title" data-i18n="next.thesis">Read the research on digital inclusion</span>
             <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
     </template>
@@ -516,9 +516,9 @@
                 </div>
             </div>
         </div>
-        <a href="#project/digitization" class="pv__next" data-open-project="digitization">
+        <a href="#project/martial-store" class="pv__next" data-open-project="martial-store">
             <span class="pv__next-label" data-i18n="next.label">Next</span>
-            <span class="pv__next-title" data-i18n="next.digi">See the digitized collection</span>
+            <span class="pv__next-title" data-i18n="next.martial">See the live web shop</span>
             <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
     </template>
@@ -548,9 +548,9 @@
                 </div>
             </div>
         </div>
-        <a href="#project/digital-inclusion" class="pv__next" data-open-project="digital-inclusion">
+        <a href="#project/enterprise-it-platform" class="pv__next" data-open-project="enterprise-it-platform">
             <span class="pv__next-label" data-i18n="next.label">Next</span>
-            <span class="pv__next-title" data-i18n="next.thesis">Read the research on digital inclusion</span>
+            <span class="pv__next-title" data-i18n="next.enterprise">Explore the operations platform</span>
             <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
     </template>
