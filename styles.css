@@ -1085,6 +1085,12 @@ a {
     border-radius: var(--radius-lg);
 }
 
+.btn-glass.card-primary,
+.btn-glass.card-primary:hover,
+.btn-glass.card-primary:active {
+    transform: none;
+}
+
 .card-text {
     max-width: 64ch;
     font-size: 0.95rem;
