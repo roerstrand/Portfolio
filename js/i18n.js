@@ -153,6 +153,7 @@
         'next.lexclash': 'Se ordspelet i realtid i .NET',
         'next.blazor': 'Se det skiktade Blazor-quizet',
         'next.wpf': 'Se WPF-skrivbordsappen',
+        'next.martial': 'Se den driftsatta webbutiken',
         'next.digi': 'Se den digitaliserade samlingen',
         'next.thesis': 'Läs forskningen om digital inkludering',
         'pv.enterprise.status': 'Pågående: Azure-resurser provisioneras med Terraform som första steg i en flytt till AKS. Själva klustret finns ännu inte i Terraform.',

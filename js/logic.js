@@ -15,6 +15,7 @@
 
     const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
     const LANGUAGES = ['en', 'sv'];
+    const DEFAULT_LANGUAGE = 'sv';
 
     function parseRoute(hash) {
         const match = /^#project\/(.+)$/.exec(hash || '');
@@ -32,7 +33,7 @@
         if (LANGUAGES.includes(stored)) {
             return stored;
         }
-        return 'en';
+        return DEFAULT_LANGUAGE;
     }
 
     function translate(dict, lang, key) {
@@ -113,6 +114,7 @@
         parseRoute,
         routeFor,
         resolveLanguage,
+        DEFAULT_LANGUAGE,
         translate,
         viewTransform,
     };

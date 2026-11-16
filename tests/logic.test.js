@@ -106,11 +106,15 @@ test('routeFor builds the stable hash for a project', () => {
     assert.equal(routeFor('enterprise-it-platform'), '#project/enterprise-it-platform');
 });
 
-test('resolveLanguage prefers the URL, then the stored choice, then English', () => {
-    assert.equal(resolveLanguage({ param: 'sv', stored: 'en' }), 'sv');
-    assert.equal(resolveLanguage({ param: null, stored: 'sv' }), 'sv');
-    assert.equal(resolveLanguage({ param: 'de', stored: null }), 'en');
-    assert.equal(resolveLanguage({}), 'en');
+test('resolveLanguage prefers the URL, then the stored choice, then Swedish', () => {
+    assert.equal(resolveLanguage({ param: 'en', stored: 'sv' }), 'en');
+    assert.equal(resolveLanguage({ param: null, stored: 'en' }), 'en');
+    assert.equal(resolveLanguage({ param: 'de', stored: null }), 'sv');
+    assert.equal(resolveLanguage({}), 'sv');
+});
+
+test('DEFAULT_LANGUAGE is Swedish', () => {
+    assert.equal(require('../js/logic.js').DEFAULT_LANGUAGE, 'sv');
 });
 
 test('translate falls back to English and then to the key', () => {
