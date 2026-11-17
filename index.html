@@ -17,7 +17,9 @@
 </head>
 
 <body>
-    <header class="hero" data-hero>
+    <a href="#main" class="skip-link" data-jump data-i18n="skip.main">Skip to content</a>
+
+    <header id="top" class="hero" tabindex="-1" data-hero>
         <div class="hero__light" aria-hidden="true"></div>
 
         <div class="hero__bar">
@@ -111,7 +113,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <section id="projects" class="projects" aria-labelledby="projects-title">
             <h2 id="projects-title" tabindex="-1" data-i18n="projects.title">Projects</h2>
 
@@ -312,6 +314,15 @@
     <footer>
         © 2026 Robin Erik Strandberg
     </footer>
+
+    <a href="#top" class="to-top" data-jump data-to-top>
+        <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <circle class="to-top__track" cx="24" cy="24" r="22" pathLength="100" />
+            <circle class="to-top__progress" cx="24" cy="24" r="22" pathLength="100" />
+        </svg>
+        <i class="fas fa-arrow-up to-top__icon" aria-hidden="true"></i>
+        <span class="sr-only" data-i18n="top.label">Back to top</span>
+    </a>
 
     <dialog class="pv glass glass--smoke" aria-labelledby="pv-title" data-pv>
         <div class="pv__inner">

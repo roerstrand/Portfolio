@@ -102,7 +102,21 @@
         return links;
     }
 
+    function scrollProgress(scrollY, scrollHeight, viewportHeight) {
+        const distance = scrollHeight - viewportHeight;
+        if (distance <= 0) {
+            return 0;
+        }
+        return round2(clamp(scrollY / distance, 0, 1));
+    }
+
+    function shouldShowBackToTop(scrollY, viewportHeight) {
+        return scrollY > viewportHeight * 0.6;
+    }
+
     const api = {
+        scrollProgress,
+        shouldShowBackToTop,
         matchesFilter,
         filterStatus,
         pointerRatio,

@@ -286,6 +286,57 @@
         });
     }
 
+    function initJumpLinks() {
+        document.addEventListener('click', event => {
+            const link = event.target.closest('a[data-jump]');
+            if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+                return;
+            }
+            const target = document.getElementById(link.getAttribute('href').slice(1));
+            if (!target) {
+                return;
+            }
+            event.preventDefault();
+            const behavior = reduced() ? 'auto' : 'smooth';
+            if (target.id === 'top') {
+                window.scrollTo({ top: 0, behavior });
+            } else {
+                target.scrollIntoView({ behavior, block: 'start' });
+            }
+            target.focus({ preventScroll: true });
+        });
+    }
+
+    function initBackToTop() {
+        const button = document.querySelector('[data-to-top]');
+        if (!button) {
+            return;
+        }
+        let frame = 0;
+        let visible = null;
+
+        const render = () => {
+            frame = 0;
+            const y = window.scrollY;
+            const height = window.innerHeight;
+            const show = L.shouldShowBackToTop(y, height);
+            if (show !== visible) {
+                visible = show;
+                button.classList.toggle('is-visible', show);
+            }
+            button.style.setProperty('--progress', L.scrollProgress(y, document.documentElement.scrollHeight, height));
+        };
+        const schedule = () => {
+            if (!frame) {
+                frame = window.requestAnimationFrame(render);
+            }
+        };
+
+        window.addEventListener('scroll', schedule, { passive: true });
+        window.addEventListener('resize', schedule, { passive: true });
+        render();
+    }
+
     function initFilters(grid, cards) {
         const bar = document.querySelector('[data-filter-bar]');
         const status = document.querySelector('[data-filter-status]');
@@ -692,6 +743,8 @@
     initLanguage();
     const heroViewer = initHero();
     initExploreLink();
+    initJumpLinks();
+    initBackToTop();
     const grid = document.querySelector('[data-grid]');
     const cards = grid ? [...grid.querySelectorAll('.project-card')] : [];
     if (grid) {
